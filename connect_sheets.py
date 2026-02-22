@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent
 CREDENTIALS_DIR = BASE_DIR / "credentials"
 SERVICE_ACCOUNT_FILE = CREDENTIALS_DIR / "service_account.json"
 
-SPREADSHEET_NAME = "Meat Export Model"
+SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/1ROyguHxXvad-SV0yMN8zFUlGTegGM5C-d10VipsTEu0/edit?usp=sharing"
 
 
 def main():
@@ -25,12 +25,12 @@ def main():
     print("Authenticating with service account...")
     gc = gspread.service_account(filename=str(SERVICE_ACCOUNT_FILE))
 
-    print(f"Opening spreadsheet: '{SPREADSHEET_NAME}'")
+    print(f"Opening spreadsheet by URL...")
     try:
-        spreadsheet = gc.open(SPREADSHEET_NAME)
+        spreadsheet = gc.open_by_url(SPREADSHEET_URL)
     except gspread.SpreadsheetNotFound:
         print(
-            f"Error: Spreadsheet '{SPREADSHEET_NAME}' not found.\n"
+            "Error: Spreadsheet not found.\n"
             "Make sure the sheet is shared with the service account email address."
         )
         sys.exit(1)
