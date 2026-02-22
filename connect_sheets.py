@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 import gspread
+from gspread.exceptions import APIError
 
 # Paths relative to this script's location
 BASE_DIR = Path(__file__).resolve().parent
@@ -28,6 +29,29 @@ def main():
     print(f"Opening spreadsheet by URL...")
     try:
         spreadsheet = gc.open_by_url(SPREADSHEET_URL)
+    except APIError as e:
+        resp = e.response
+        print(f"\n--- API Error ---")
+        print(f"Status code: {resp.status_code}")
+        print(f"Reason: {resp.reason}")
+        print(f"\nHeaders:")
+        for key, value in resp.headers.items():
+            print(f"  {key}: {value}")
+        print(f"\nBody:\n{resp.text}")
+        sys.exit(1)
+    except PermissionError as e:
+        print(f"\n--- Permission Error ---")
+        print(f"The service account does not have access to this spreadsheet.")
+        print(f"Underlying error: {e.__cause__}")
+        if hasattr(e, '__cause__') and isinstance(e.__cause__, APIError):
+            resp = e.__cause__.response
+            print(f"Status code: {resp.status_code}")
+            print(f"Reason: {resp.reason}")
+            print(f"\nHeaders:")
+            for key, value in resp.headers.items():
+                print(f"  {key}: {value}")
+            print(f"\nBody:\n{resp.text}")
+        sys.exit(1)
     except gspread.SpreadsheetNotFound:
         print(
             "Error: Spreadsheet not found.\n"
