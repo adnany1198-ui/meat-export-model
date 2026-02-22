@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 import gspread
+from google_auth_oauthlib.flow import InstalledAppFlow
 
 # Paths relative to this script's location
 BASE_DIR = Path(__file__).resolve().parent
@@ -12,6 +13,12 @@ CREDENTIALS_FILE = CREDENTIALS_DIR / "credentials.json"
 AUTHORIZED_USER_FILE = CREDENTIALS_DIR / "authorized_user.json"
 
 SPREADSHEET_NAME = "Meat Export Model"
+
+
+def console_flow(client_config, scopes, port=0):
+    """OAuth flow that prints a URL for the user to visit (no browser needed)."""
+    flow = InstalledAppFlow.from_client_config(client_config, scopes)
+    return flow.run_local_server(port=port, open_browser=False)
 
 
 def main():
@@ -27,6 +34,7 @@ def main():
     gc = gspread.oauth(
         credentials_filename=str(CREDENTIALS_FILE),
         authorized_user_filename=str(AUTHORIZED_USER_FILE),
+        flow=console_flow,
     )
 
     print(f"Opening spreadsheet: '{SPREADSHEET_NAME}'")
