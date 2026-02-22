@@ -1,0 +1,261 @@
+{
+  "cycle": {
+    "PROC_MODEL": "SUPPLIER",
+    "Customer_ID": "A",
+    "SHIPMENT": 1,
+    "START_DATE": "2026-01-01T00:00:00.000Z",
+    "START_DAY": "Thursday",
+    "END_DATE": "2026-01-15T00:00:00.000Z",
+    "END_DAY": "Thursday",
+    "DURATION": 15,
+    "CASH_DATE": "2026-01-01T00:00:00.000Z",
+    "CASH_DAY": "Thursday",
+    "PERM_ROW": 9,
+    "LEAD_TIME": 3,
+    "MANDI_DAY": "",
+    "SLAUGHTER_DATE": "2026-01-04T00:00:00.000Z",
+    "PROC_TIME": 3,
+    "SLAUGHTER_DAY": "Sunday",
+    "SLAUGHTER_DUR": 2,
+    "SLAUGHTER_END": "2026-01-05T00:00:00.000Z",
+    "PAY_ROW": "",
+    "PAY_DAYS": 9,
+    "RAW_SEND_DATE": "2026-01-14T00:00:00.000Z",
+    "KSA_SEND_DATE": "2026-01-14T00:00:00.000Z",
+    "KSA_SEND_DAY": "Wednesday",
+    "PK_RECEIVE_DATE": "2026-01-15T00:00:00.000Z",
+    "PK_RECEIVE_DAY": "Thursday",
+    "PAY_LEAD": 10,
+    "WEIGHT_KG": 8000,
+    "WEIGHT_KG_PLANNED": 8000,
+    "WEIGHT_KG_NET": 8000
+  },
+  "cashflow": [
+    {
+      "Date": "2026-01-01T00:00:00.000Z",
+      "Weekday": "Thu",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "PROCUREMENT_SUPPLIER",
+      "Direction": "OUT",
+      "Amount_PKR": 8880000,
+      "Payment_Date_After_Credit": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "Date": "2026-01-04T00:00:00.000Z",
+      "Weekday": "Sun",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "Slaughter",
+      "Direction": "OUT",
+      "Amount_PKR": 40000,
+      "Payment_Date_After_Credit": "2026-01-04T00:00:00.000Z"
+    },
+    {
+      "Date": "2026-01-04T00:00:00.000Z",
+      "Weekday": "Sun",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "Animal_Trimming",
+      "Direction": "OUT",
+      "Amount_PKR": 308000,
+      "Payment_Date_After_Credit": "2026-01-04T00:00:00.000Z"
+    },
+    {
+      "Date": "2026-01-05T00:00:00.000Z",
+      "Weekday": "Mon",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "Freight",
+      "Direction": "OUT",
+      "Amount_PKR": 1696000,
+      "Payment_Date_After_Credit": "2026-01-05T00:00:00.000Z"
+    },
+    {
+      "Date": "2026-01-05T00:00:00.000Z",
+      "Weekday": "Mon",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "Clearance",
+      "Direction": "OUT",
+      "Amount_PKR": 48000,
+      "Payment_Date_After_Credit": "2026-01-05T00:00:00.000Z"
+    },
+    {
+      "Date": "2026-01-05T00:00:00.000Z",
+      "Weekday": "Mon",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "Stickers_Wrap",
+      "Direction": "OUT",
+      "Amount_PKR": 18720,
+      "Payment_Date_After_Credit": "2026-01-05T00:00:00.000Z"
+    },
+    {
+      "Date": "2026-01-05T00:00:00.000Z",
+      "Weekday": "Mon",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "AWB",
+      "Direction": "OUT",
+      "Amount_PKR": 10320,
+      "Payment_Date_After_Credit": "2026-01-05T00:00:00.000Z"
+    },
+    {
+      "Date": "2026-01-05T00:00:00.000Z",
+      "Weekday": "Mon",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "AQD",
+      "Direction": "OUT",
+      "Amount_PKR": 16000,
+      "Payment_Date_After_Credit": "2026-01-05T00:00:00.000Z"
+    },
+    {
+      "Date": "2026-01-05T00:00:00.000Z",
+      "Weekday": "Mon",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "PSW",
+      "Direction": "OUT",
+      "Amount_PKR": 640,
+      "Payment_Date_After_Credit": "2026-01-05T00:00:00.000Z"
+    },
+    {
+      "Date": "2026-01-05T00:00:00.000Z",
+      "Weekday": "Mon",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "Halal",
+      "Direction": "OUT",
+      "Amount_PKR": 103440,
+      "Payment_Date_After_Credit": "2026-01-05T00:00:00.000Z"
+    },
+    {
+      "Date": "2026-01-05T00:00:00.000Z",
+      "Weekday": "Mon",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "Dry_Ice_Box",
+      "Direction": "OUT",
+      "Amount_PKR": 75040,
+      "Payment_Date_After_Credit": "2026-01-05T00:00:00.000Z"
+    },
+    {
+      "Date": "2026-01-06T00:00:00.000Z",
+      "Weekday": "Tue",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "TPT_Slaughter",
+      "Direction": "OUT",
+      "Amount_PKR": 87600,
+      "Payment_Date_After_Credit": "2026-01-06T00:00:00.000Z"
+    },
+    {
+      "Date": "2026-01-06T00:00:00.000Z",
+      "Weekday": "Tue",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "Data_Logger",
+      "Direction": "OUT",
+      "Amount_PKR": 11040,
+      "Payment_Date_After_Credit": "2026-01-06T00:00:00.000Z"
+    },
+    {
+      "Date": "2026-01-06T00:00:00.000Z",
+      "Weekday": "Tue",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "Chilling",
+      "Direction": "OUT",
+      "Amount_PKR": 440000,
+      "Payment_Date_After_Credit": "2026-01-06T00:00:00.000Z"
+    },
+    {
+      "Date": "2026-01-06T00:00:00.000Z",
+      "Weekday": "Tue",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "Polysheet",
+      "Direction": "OUT",
+      "Amount_PKR": 8000,
+      "Payment_Date_After_Credit": "2026-01-06T00:00:00.000Z"
+    },
+    {
+      "Date": "2026-01-15T00:00:00.000Z",
+      "Weekday": "Thu",
+      "Customer_ID": "A",
+      "Shipment": 1,
+      "Proc_Model": "SUPPLIER",
+      "Item": "SALE",
+      "Direction": "IN",
+      "Amount_PKR": 12813600,
+      "Payment_Date_After_Credit": "2026-02-01T00:00:00.000Z"
+    }
+  ],
+  "strategy": {
+    "jan_tonnage": [
+      "2026-01-01T00:00:00.000Z",
+      40,
+      5,
+      8,
+      "Testing phase begins"
+    ],
+    "pricing": [
+      [
+        "2025-12-10T00:00:00.000Z",
+        5.9
+      ],
+      [
+        "13-15",
+        5.8
+      ],
+      [
+        "16-18",
+        5.7
+      ],
+      [
+        "19-20",
+        5.65
+      ],
+      [
+        "",
+        ""
+      ],
+      [
+        "USD_to_PKR_Rate:",
+        281
+      ]
+    ],
+    "customer_credit": [
+      "2026-01-01T00:00:00.000Z",
+      15,
+      20,
+      17.5,
+      "Testing phase - risky customers"
+    ],
+    "supplier_credit": [
+      "Month",
+      "Min_Days",
+      "Max_Days",
+      "Avg_Days",
+      "Notes"
+    ],
+    "usd_to_pkr": 281
+  }
+}
