@@ -1,0 +1,21 @@
+# Virtual environment
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Credentials (never commit secrets)
+credentials/*.json
+credentials/*.p12
+credentials/*.pem
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
