@@ -43,3 +43,6 @@ class StrategyConfig:
     usd_to_pkr: float = 0.0
     customer_credit_days: list[CreditDays] = field(default_factory=list)
     supplier_credit_days: list[CreditDays] = field(default_factory=list)
+    # Procurement cost per kg by model, from control_raw OUTFLOWS section
+    # e.g. {"SUPPLIER": 1110, "INTERNAL": 1000}
+    partha_rates: dict[str, float] = field(default_factory=dict)

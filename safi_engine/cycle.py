@@ -18,6 +18,7 @@ class ShipmentCycle:
     shipment_number: int
     cash_date: datetime.date
     slaughter_date: datetime.date
+    slaughter_end_date: datetime.date  # SLAUGHTER_END from raw data
     send_date: datetime.date  # KSA_SEND_DATE
     receive_date: datetime.date  # PK_RECEIVE_DATE
     pay_days: int
