@@ -17,6 +17,10 @@ SPREADSHEET_URL = (
     "1ROyguHxXvad-SV0yMN8zFUlGTegGM5C-d10VipsTEu0/edit?usp=sharing"
 )
 
+# Sheets with multi-column layouts where row-1-as-headers doesn't work.
+# These get exported as raw 2D arrays (*_raw.json) instead of list-of-dicts.
+RAW_EXPORT_SLUGS = {"strategy_control", "cycle_detail", "control"}
+
 
 def slugify(name):
     """Turn a worksheet title into a safe filename slug."""
@@ -33,6 +37,11 @@ def export_worksheet(ws):
         return []
     headers = rows[0]
     return [dict(zip(headers, row)) for row in rows[1:]]
+
+
+def export_worksheet_raw(ws):
+    """Return the raw 2D array from get_all_values() — no header mapping."""
+    return ws.get_all_values()
 
 
 def main():
@@ -61,14 +70,22 @@ def main():
 
     for ws in worksheets:
         slug = slugify(ws.title)
-        out_path = FIXTURES_DIR / f"{slug}.json"
-        print(f"  Exporting '{ws.title}' -> {out_path.relative_to(BASE_DIR)}")
 
-        data = export_worksheet(ws)
-        with open(out_path, "w") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-
-        print(f"    {len(data)} rows written")
+        if slug in RAW_EXPORT_SLUGS:
+            # Multi-column layout — save as raw 2D grid
+            out_path = FIXTURES_DIR / f"{slug}_raw.json"
+            print(f"  Exporting '{ws.title}' -> {out_path.relative_to(BASE_DIR)}  [raw grid]")
+            data = export_worksheet_raw(ws)
+            with open(out_path, "w") as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+            print(f"    {len(data)} rows x {len(data[0]) if data else 0} cols written")
+        else:
+            out_path = FIXTURES_DIR / f"{slug}.json"
+            print(f"  Exporting '{ws.title}' -> {out_path.relative_to(BASE_DIR)}")
+            data = export_worksheet(ws)
+            with open(out_path, "w") as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+            print(f"    {len(data)} rows written")
 
     print(f"\nDone. Fixtures saved to {FIXTURES_DIR.relative_to(BASE_DIR)}/")
 
