@@ -1,0 +1,494 @@
+[
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "📊 SECTION 1: MONTHLY TONNAGE TARGETS",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Month",
+    "": "Notes"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jan-2026",
+    "": "Testing phase begins"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Feb-2026",
+    "": "Adding customers"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Mar-2026",
+    "": "Building volume"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Apr-2026",
+    "": "Approaching 100T target"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "May-2026",
+    "": "Hit 100T target"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jun-2026",
+    "": "Testing complete - 14 customers"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jul-2026",
+    "": "Drop weak performers - SCALE INJECTION"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Aug-2026",
+    "": "Consolidating to strong customers"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Sep-2026",
+    "": "Scaling with proven customers"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Oct-2026",
+    "": "Approaching target state"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Nov-2026",
+    "": "Near target"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Dec-2026",
+    "": "Target state achieved"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "💰 SECTION 2: PRICING STRATEGY (USD per kg)",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Credit_Days",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "10-12",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "13-15",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "16-18",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "19-20",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "USD_to_PKR_Rate:",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "🏭 SECTION 3: PROCUREMENT MODEL MIX",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Month",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jan-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Feb-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Mar-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Apr-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "May-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jun-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jul-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Aug-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Sep-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Oct-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Nov-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Dec-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "📅 SECTION 4: CREDIT TERMS EVOLUTION (Payment Days)",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Customer Payment Terms",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Month",
+    "": "Notes"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jan-2026",
+    "": "Testing phase - risky customers"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Feb-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Mar-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Apr-2026",
+    "": "Starting to tighten"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "May-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jun-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jul-2026",
+    "": "Only strong customers"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Aug-2026",
+    "": "Best performers only"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Sep-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Oct-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Nov-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Dec-2026",
+    "": "Stable terms with proven customers"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Supplier Payment Terms (Procurement)",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Month",
+    "": "Notes"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jan-2026",
+    "": "Cash on delivery mostly"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Feb-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Mar-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Apr-2026",
+    "": "Building trust"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "May-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jun-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jul-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Aug-2026",
+    "": "Stronger terms"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Sep-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Oct-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Nov-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Dec-2026",
+    "": "Best terms achieved"
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Freight Payment Terms",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Month",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jan-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Feb-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Mar-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Apr-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "May-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jun-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jul-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Aug-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Sep-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Oct-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Nov-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Dec-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Slaughter Payment Terms",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Month",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jan-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Feb-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Mar-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Apr-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "May-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jun-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jul-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Aug-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Sep-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Oct-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Nov-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Dec-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "💵 SECTION 5: WORKING CAPITAL SCHEDULE",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Month",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jan-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Feb-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Mar-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Apr-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "May-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jun-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Jul-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Aug-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Sep-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Oct-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Nov-2026",
+    "": ""
+  },
+  {
+    "STRATEGY CONTROL PANEL": "Dec-2026",
+    "": ""
+  }
+]

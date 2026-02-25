@@ -1,0 +1,890 @@
+[
+  {
+    "MONTHLY OPERATIONS AUDIT": "Select Month:",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "📦 SHIPMENTS THIS MONTH",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "Customer",
+    "": "Status"
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "H",
+    "": "⚠️ Over"
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "B",
+    "": "✓"
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "F",
+    "": "⚠️ Over"
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "E",
+    "": "⚠️ Over"
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "A",
+    "": "⚠️ Under"
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "C",
+    "": "⚠️ Under"
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "D",
+    "": "⚠️ Under"
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "G",
+    "": "✓"
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "H",
+    "": "⚠️ Under"
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "B",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "F",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "E",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "A",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "C",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "D",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "→ Total Shipments:",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "→ Total Tonnage:",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "💰 CASHFLOW SUMMARY",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "OUTFLOWS:",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "  Procurement:",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "  Slaughter:",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "  Freight:",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "  Overhead:",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "  Total OUT:",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "INFLOWS:",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "  Sales:",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "  Total IN:",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "",
+    "": ""
+  },
+  {
+    "MONTHLY OPERATIONS AUDIT": "NET CASHFLOW:",
+    "": ""
+  }
+]

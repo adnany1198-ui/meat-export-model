@@ -1,0 +1,106 @@
+[
+  {
+    "Month": "Jan",
+    "Year": "2026",
+    "Outflows": "93633004",
+    "Inflows": "30752640",
+    "Net Cashflow": "-62880364",
+    "Cumulative": "-62880364"
+  },
+  {
+    "Month": "Feb",
+    "Year": "2026",
+    "Outflows": "88929194.95",
+    "Inflows": "63518845.71",
+    "Net Cashflow": "-25410349.24",
+    "Cumulative": "-88290713.24"
+  },
+  {
+    "Month": "Mar",
+    "Year": "2026",
+    "Outflows": "91945414.25",
+    "Inflows": "110212214.3",
+    "Net Cashflow": "18266800.03",
+    "Cumulative": "-70023913.2"
+  },
+  {
+    "Month": "Apr",
+    "Year": "2026",
+    "Outflows": "139935257.3",
+    "Inflows": "127803909.1",
+    "Net Cashflow": "-12131348.16",
+    "Cumulative": "-82155261.37"
+  },
+  {
+    "Month": "May",
+    "Year": "2026",
+    "Outflows": "163463672.7",
+    "Inflows": "158284352.4",
+    "Net Cashflow": "-5179320.234",
+    "Cumulative": "-87334581.6"
+  },
+  {
+    "Month": "Jun",
+    "Year": "2026",
+    "Outflows": "156831625.4",
+    "Inflows": "177666109.9",
+    "Net Cashflow": "20834484.46",
+    "Cumulative": "-66500097.14"
+  },
+  {
+    "Month": "Jul",
+    "Year": "2026",
+    "Outflows": "210864541.5",
+    "Inflows": "170057988.6",
+    "Net Cashflow": "-40806552.93",
+    "Cumulative": "-107306650.1"
+  },
+  {
+    "Month": "Aug",
+    "Year": "2026",
+    "Outflows": "180873466.5",
+    "Inflows": "241903065",
+    "Net Cashflow": "61029598.5",
+    "Cumulative": "-46277051.57"
+  },
+  {
+    "Month": "Sep",
+    "Year": "2026",
+    "Outflows": "294588182.6",
+    "Inflows": "263410403.6",
+    "Net Cashflow": "-31177779",
+    "Cumulative": "-77454830.57"
+  },
+  {
+    "Month": "Oct",
+    "Year": "2026",
+    "Outflows": "366445605.4",
+    "Inflows": "392211771.4",
+    "Net Cashflow": "25766166",
+    "Cumulative": "-51688664.57"
+  },
+  {
+    "Month": "Nov",
+    "Year": "2026",
+    "Outflows": "298114786.9",
+    "Inflows": "330158942.9",
+    "Net Cashflow": "32044156",
+    "Cumulative": "-19644508.57"
+  },
+  {
+    "Month": "Dec",
+    "Year": "2026",
+    "Outflows": "212908834",
+    "Inflows": "374448557.1",
+    "Net Cashflow": "161539723.1",
+    "Cumulative": "141895214.6"
+  },
+  {
+    "Month": "Jan",
+    "Year": "2027",
+    "Outflows": "54",
+    "Inflows": "162474200",
+    "Net Cashflow": "162474146",
+    "Cumulative": "304369360.6"
+  }
+]

@@ -1,0 +1,2122 @@
+[
+  {
+    "PLAN_KEY": "A|2026|1",
+    "Customer": "A",
+    "Year": "2026",
+    "MonthNum": "1",
+    "TargetKg": "8000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "B|2026|1",
+    "Customer": "B",
+    "Year": "2026",
+    "MonthNum": "1",
+    "TargetKg": "8000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "C|2026|1",
+    "Customer": "C",
+    "Year": "2026",
+    "MonthNum": "1",
+    "TargetKg": "8000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "D|2026|1",
+    "Customer": "D",
+    "Year": "2026",
+    "MonthNum": "1",
+    "TargetKg": "8000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "E|2026|1",
+    "Customer": "E",
+    "Year": "2026",
+    "MonthNum": "1",
+    "TargetKg": "8000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "A|2026|2",
+    "Customer": "A",
+    "Year": "2026",
+    "MonthNum": "2",
+    "TargetKg": "7857.142857",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "B|2026|2",
+    "Customer": "B",
+    "Year": "2026",
+    "MonthNum": "2",
+    "TargetKg": "7857.142857",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "C|2026|2",
+    "Customer": "C",
+    "Year": "2026",
+    "MonthNum": "2",
+    "TargetKg": "7857.142857",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "D|2026|2",
+    "Customer": "D",
+    "Year": "2026",
+    "MonthNum": "2",
+    "TargetKg": "7857.142857",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "E|2026|2",
+    "Customer": "E",
+    "Year": "2026",
+    "MonthNum": "2",
+    "TargetKg": "7857.142857",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "F|2026|2",
+    "Customer": "F",
+    "Year": "2026",
+    "MonthNum": "2",
+    "TargetKg": "7857.142857",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "G|2026|2",
+    "Customer": "G",
+    "Year": "2026",
+    "MonthNum": "2",
+    "TargetKg": "7857.142857",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "A|2026|3",
+    "Customer": "A",
+    "Year": "2026",
+    "MonthNum": "3",
+    "TargetKg": "7777.777778",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "B|2026|3",
+    "Customer": "B",
+    "Year": "2026",
+    "MonthNum": "3",
+    "TargetKg": "7777.777778",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "C|2026|3",
+    "Customer": "C",
+    "Year": "2026",
+    "MonthNum": "3",
+    "TargetKg": "7777.777778",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "D|2026|3",
+    "Customer": "D",
+    "Year": "2026",
+    "MonthNum": "3",
+    "TargetKg": "7777.777778",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "E|2026|3",
+    "Customer": "E",
+    "Year": "2026",
+    "MonthNum": "3",
+    "TargetKg": "7777.777778",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "F|2026|3",
+    "Customer": "F",
+    "Year": "2026",
+    "MonthNum": "3",
+    "TargetKg": "7777.777778",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "G|2026|3",
+    "Customer": "G",
+    "Year": "2026",
+    "MonthNum": "3",
+    "TargetKg": "7777.777778",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "H|2026|3",
+    "Customer": "H",
+    "Year": "2026",
+    "MonthNum": "3",
+    "TargetKg": "7777.777778",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "I|2026|3",
+    "Customer": "I",
+    "Year": "2026",
+    "MonthNum": "3",
+    "TargetKg": "7777.777778",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "A|2026|4",
+    "Customer": "A",
+    "Year": "2026",
+    "MonthNum": "4",
+    "TargetKg": "7727.272727",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "B|2026|4",
+    "Customer": "B",
+    "Year": "2026",
+    "MonthNum": "4",
+    "TargetKg": "7727.272727",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "C|2026|4",
+    "Customer": "C",
+    "Year": "2026",
+    "MonthNum": "4",
+    "TargetKg": "7727.272727",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "D|2026|4",
+    "Customer": "D",
+    "Year": "2026",
+    "MonthNum": "4",
+    "TargetKg": "7727.272727",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "E|2026|4",
+    "Customer": "E",
+    "Year": "2026",
+    "MonthNum": "4",
+    "TargetKg": "7727.272727",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "F|2026|4",
+    "Customer": "F",
+    "Year": "18/07/1905",
+    "MonthNum": "03/01/1900",
+    "TargetKg": "7727.272727",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "G|2026|4",
+    "Customer": "G",
+    "Year": "18/07/1905",
+    "MonthNum": "03/01/1900",
+    "TargetKg": "7727.272727",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "H|2026|4",
+    "Customer": "H",
+    "Year": "18/07/1905",
+    "MonthNum": "03/01/1900",
+    "TargetKg": "7727.272727",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "I|2026|4",
+    "Customer": "I",
+    "Year": "18/07/1905",
+    "MonthNum": "03/01/1900",
+    "TargetKg": "7727.272727",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "J|2026|4",
+    "Customer": "J",
+    "Year": "18/07/1905",
+    "MonthNum": "03/01/1900",
+    "TargetKg": "7727.272727",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "K|2026|4",
+    "Customer": "K",
+    "Year": "18/07/1905",
+    "MonthNum": "03/01/1900",
+    "TargetKg": "7727.272727",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "A|2026|5",
+    "Customer": "A",
+    "Year": "18/07/1905",
+    "MonthNum": "04/01/1900",
+    "TargetKg": "7692.307692",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "B|2026|5",
+    "Customer": "B",
+    "Year": "18/07/1905",
+    "MonthNum": "04/01/1900",
+    "TargetKg": "7692.307692",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "C|2026|5",
+    "Customer": "C",
+    "Year": "18/07/1905",
+    "MonthNum": "04/01/1900",
+    "TargetKg": "7692.307692",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "D|2026|5",
+    "Customer": "D",
+    "Year": "18/07/1905",
+    "MonthNum": "04/01/1900",
+    "TargetKg": "7692.307692",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "E|2026|5",
+    "Customer": "E",
+    "Year": "18/07/1905",
+    "MonthNum": "04/01/1900",
+    "TargetKg": "7692.307692",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "F|2026|5",
+    "Customer": "F",
+    "Year": "18/07/1905",
+    "MonthNum": "04/01/1900",
+    "TargetKg": "7692.307692",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "G|2026|5",
+    "Customer": "G",
+    "Year": "18/07/1905",
+    "MonthNum": "04/01/1900",
+    "TargetKg": "7692.307692",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "H|2026|5",
+    "Customer": "H",
+    "Year": "18/07/1905",
+    "MonthNum": "04/01/1900",
+    "TargetKg": "7692.307692",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "I|2026|5",
+    "Customer": "I",
+    "Year": "18/07/1905",
+    "MonthNum": "04/01/1900",
+    "TargetKg": "7692.307692",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "J|2026|5",
+    "Customer": "J",
+    "Year": "18/07/1905",
+    "MonthNum": "04/01/1900",
+    "TargetKg": "7692.307692",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "K|2026|5",
+    "Customer": "K",
+    "Year": "18/07/1905",
+    "MonthNum": "04/01/1900",
+    "TargetKg": "7692.307692",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "L|2026|5",
+    "Customer": "L",
+    "Year": "18/07/1905",
+    "MonthNum": "04/01/1900",
+    "TargetKg": "7692.307692",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "M|2026|5",
+    "Customer": "M",
+    "Year": "18/07/1905",
+    "MonthNum": "04/01/1900",
+    "TargetKg": "7692.307692",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "A|2026|6",
+    "Customer": "A",
+    "Year": "18/07/1905",
+    "MonthNum": "05/01/1900",
+    "TargetKg": "7142.857143",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "B|2026|6",
+    "Customer": "B",
+    "Year": "18/07/1905",
+    "MonthNum": "05/01/1900",
+    "TargetKg": "7142.857143",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "C|2026|6",
+    "Customer": "C",
+    "Year": "18/07/1905",
+    "MonthNum": "05/01/1900",
+    "TargetKg": "7142.857143",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "D|2026|6",
+    "Customer": "D",
+    "Year": "18/07/1905",
+    "MonthNum": "05/01/1900",
+    "TargetKg": "7142.857143",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "E|2026|6",
+    "Customer": "E",
+    "Year": "18/07/1905",
+    "MonthNum": "05/01/1900",
+    "TargetKg": "7142.857143",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "F|2026|6",
+    "Customer": "F",
+    "Year": "18/07/1905",
+    "MonthNum": "05/01/1900",
+    "TargetKg": "7142.857143",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "G|2026|6",
+    "Customer": "G",
+    "Year": "18/07/1905",
+    "MonthNum": "05/01/1900",
+    "TargetKg": "7142.857143",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "H|2026|6",
+    "Customer": "H",
+    "Year": "18/07/1905",
+    "MonthNum": "05/01/1900",
+    "TargetKg": "7142.857143",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "I|2026|6",
+    "Customer": "I",
+    "Year": "2026",
+    "MonthNum": "6",
+    "TargetKg": "7142.857143",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "J|2026|6",
+    "Customer": "J",
+    "Year": "2026",
+    "MonthNum": "6",
+    "TargetKg": "7142.857143",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "K|2026|6",
+    "Customer": "K",
+    "Year": "2026",
+    "MonthNum": "6",
+    "TargetKg": "7142.857143",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "L|2026|6",
+    "Customer": "L",
+    "Year": "2026",
+    "MonthNum": "6",
+    "TargetKg": "7142.857143",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "M|2026|6",
+    "Customer": "M",
+    "Year": "2026",
+    "MonthNum": "6",
+    "TargetKg": "7142.857143",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "N|2026|6",
+    "Customer": "N",
+    "Year": "2026",
+    "MonthNum": "6",
+    "TargetKg": "7142.857143",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "A|2026|7",
+    "Customer": "A",
+    "Year": "2026",
+    "MonthNum": "7",
+    "TargetKg": "12000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "B|2026|7",
+    "Customer": "B",
+    "Year": "2026",
+    "MonthNum": "7",
+    "TargetKg": "12000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "C|2026|7",
+    "Customer": "C",
+    "Year": "2026",
+    "MonthNum": "7",
+    "TargetKg": "12000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "D|2026|7",
+    "Customer": "D",
+    "Year": "2026",
+    "MonthNum": "7",
+    "TargetKg": "12000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "E|2026|7",
+    "Customer": "E",
+    "Year": "2026",
+    "MonthNum": "7",
+    "TargetKg": "12000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "F|2026|7",
+    "Customer": "F",
+    "Year": "2026",
+    "MonthNum": "7",
+    "TargetKg": "12000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "G|2026|7",
+    "Customer": "G",
+    "Year": "2026",
+    "MonthNum": "7",
+    "TargetKg": "12000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "H|2026|7",
+    "Customer": "H",
+    "Year": "2026",
+    "MonthNum": "7",
+    "TargetKg": "12000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "I|2026|7",
+    "Customer": "I",
+    "Year": "2026",
+    "MonthNum": "7",
+    "TargetKg": "12000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "J|2026|7",
+    "Customer": "J",
+    "Year": "2026",
+    "MonthNum": "7",
+    "TargetKg": "12000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "A|2026|8",
+    "Customer": "A",
+    "Year": "2026",
+    "MonthNum": "8",
+    "TargetKg": "18750",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "B|2026|8",
+    "Customer": "B",
+    "Year": "2026",
+    "MonthNum": "8",
+    "TargetKg": "18750",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "C|2026|8",
+    "Customer": "C",
+    "Year": "2026",
+    "MonthNum": "8",
+    "TargetKg": "18750",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "D|2026|8",
+    "Customer": "D",
+    "Year": "2026",
+    "MonthNum": "8",
+    "TargetKg": "18750",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "E|2026|8",
+    "Customer": "E",
+    "Year": "2026",
+    "MonthNum": "8",
+    "TargetKg": "18750",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "F|2026|8",
+    "Customer": "F",
+    "Year": "2026",
+    "MonthNum": "8",
+    "TargetKg": "18750",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "G|2026|8",
+    "Customer": "G",
+    "Year": "2026",
+    "MonthNum": "8",
+    "TargetKg": "18750",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "H|2026|8",
+    "Customer": "H",
+    "Year": "2026",
+    "MonthNum": "8",
+    "TargetKg": "18750",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "A|2026|9",
+    "Customer": "A",
+    "Year": "2026",
+    "MonthNum": "9",
+    "TargetKg": "25714.28571",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "B|2026|9",
+    "Customer": "B",
+    "Year": "2026",
+    "MonthNum": "9",
+    "TargetKg": "25714.28571",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "C|2026|9",
+    "Customer": "C",
+    "Year": "2026",
+    "MonthNum": "9",
+    "TargetKg": "25714.28571",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "D|2026|9",
+    "Customer": "D",
+    "Year": "2026",
+    "MonthNum": "9",
+    "TargetKg": "25714.28571",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "E|2026|9",
+    "Customer": "E",
+    "Year": "2026",
+    "MonthNum": "9",
+    "TargetKg": "25714.28571",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "F|2026|9",
+    "Customer": "F",
+    "Year": "2026",
+    "MonthNum": "9",
+    "TargetKg": "25714.28571",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "G|2026|9",
+    "Customer": "G",
+    "Year": "2026",
+    "MonthNum": "9",
+    "TargetKg": "25714.28571",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "A|2026|10",
+    "Customer": "A",
+    "Year": "2026",
+    "MonthNum": "10",
+    "TargetKg": "30000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "B|2026|10",
+    "Customer": "B",
+    "Year": "2026",
+    "MonthNum": "10",
+    "TargetKg": "30000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "C|2026|10",
+    "Customer": "C",
+    "Year": "2026",
+    "MonthNum": "10",
+    "TargetKg": "30000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "D|2026|10",
+    "Customer": "D",
+    "Year": "2026",
+    "MonthNum": "10",
+    "TargetKg": "30000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "E|2026|10",
+    "Customer": "E",
+    "Year": "2026",
+    "MonthNum": "10",
+    "TargetKg": "30000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "F|2026|10",
+    "Customer": "F",
+    "Year": "2026",
+    "MonthNum": "10",
+    "TargetKg": "30000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "G|2026|10",
+    "Customer": "G",
+    "Year": "2026",
+    "MonthNum": "10",
+    "TargetKg": "30000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "A|2026|11",
+    "Customer": "A",
+    "Year": "2026",
+    "MonthNum": "11",
+    "TargetKg": "32857.14286",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "B|2026|11",
+    "Customer": "B",
+    "Year": "2026",
+    "MonthNum": "11",
+    "TargetKg": "32857.14286",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "C|2026|11",
+    "Customer": "C",
+    "Year": "2026",
+    "MonthNum": "11",
+    "TargetKg": "32857.14286",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "D|2026|11",
+    "Customer": "D",
+    "Year": "2026",
+    "MonthNum": "11",
+    "TargetKg": "32857.14286",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "E|2026|11",
+    "Customer": "E",
+    "Year": "2026",
+    "MonthNum": "11",
+    "TargetKg": "32857.14286",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "F|2026|11",
+    "Customer": "F",
+    "Year": "2026",
+    "MonthNum": "11",
+    "TargetKg": "32857.14286",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "G|2026|11",
+    "Customer": "G",
+    "Year": "2026",
+    "MonthNum": "11",
+    "TargetKg": "32857.14286",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "A|2026|12",
+    "Customer": "A",
+    "Year": "2026",
+    "MonthNum": "12",
+    "TargetKg": "35000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "B|2026|12",
+    "Customer": "B",
+    "Year": "2026",
+    "MonthNum": "12",
+    "TargetKg": "35000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "C|2026|12",
+    "Customer": "C",
+    "Year": "2026",
+    "MonthNum": "12",
+    "TargetKg": "35000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "D|2026|12",
+    "Customer": "D",
+    "Year": "2026",
+    "MonthNum": "12",
+    "TargetKg": "35000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "E|2026|12",
+    "Customer": "E",
+    "Year": "2026",
+    "MonthNum": "12",
+    "TargetKg": "35000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "F|2026|12",
+    "Customer": "F",
+    "Year": "2026",
+    "MonthNum": "12",
+    "TargetKg": "35000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "G|2026|12",
+    "Customer": "G",
+    "Year": "2026",
+    "MonthNum": "12",
+    "TargetKg": "35000",
+    "FirstHalfPercent": "0.6",
+    "ContainerSizeKg": "0",
+    "RejectionRate": "0"
+  },
+  {
+    "PLAN_KEY": "",
+    "Customer": "",
+    "Year": "",
+    "MonthNum": "",
+    "TargetKg": "",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "SHIP_KEY",
+    "Customer": "Count",
+    "Year": "FirstShipDate",
+    "MonthNum": "LastShipDate",
+    "TargetKg": "Example_RowIndex_in_CycleDetail",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "A|2026|1",
+    "Customer": "1",
+    "Year": "15/01/2026",
+    "MonthNum": "15/01/2026",
+    "TargetKg": "5",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "B|2026|1",
+    "Customer": "2",
+    "Year": "13/01/2026",
+    "MonthNum": "27/01/2026",
+    "TargetKg": "6",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "C|2026|1",
+    "Customer": "2",
+    "Year": "12/01/2026",
+    "MonthNum": "27/01/2026",
+    "TargetKg": "7",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "D|2026|1",
+    "Customer": "2",
+    "Year": "13/01/2026",
+    "MonthNum": "28/01/2026",
+    "TargetKg": "8",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "E|2026|1",
+    "Customer": "2",
+    "Year": "14/01/2026",
+    "MonthNum": "29/01/2026",
+    "TargetKg": "9",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "A|2026|2",
+    "Customer": "2",
+    "Year": "02/02/2026",
+    "MonthNum": "16/02/2026",
+    "TargetKg": "13",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "B|2026|2",
+    "Customer": "2",
+    "Year": "09/02/2026",
+    "MonthNum": "26/02/2026",
+    "TargetKg": "15",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "C|2026|2",
+    "Customer": "2",
+    "Year": "10/02/2026",
+    "MonthNum": "24/02/2026",
+    "TargetKg": "16",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "D|2026|2",
+    "Customer": "2",
+    "Year": "10/02/2026",
+    "MonthNum": "24/02/2026",
+    "TargetKg": "17",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "E|2026|2",
+    "Customer": "1",
+    "Year": "16/02/2026",
+    "MonthNum": "16/02/2026",
+    "TargetKg": "18",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "F|2026|2",
+    "Customer": "1",
+    "Year": "16/02/2026",
+    "MonthNum": "16/02/2026",
+    "TargetKg": "19",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "G|2026|2",
+    "Customer": "1",
+    "Year": "16/02/2026",
+    "MonthNum": "16/02/2026",
+    "TargetKg": "20",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "A|2026|3",
+    "Customer": "3",
+    "Year": "03/03/2026",
+    "MonthNum": "31/03/2026",
+    "TargetKg": "25",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "E|2026|3",
+    "Customer": "3",
+    "Year": "02/03/2026",
+    "MonthNum": "31/03/2026",
+    "TargetKg": "26",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "F|2026|3",
+    "Customer": "3",
+    "Year": "03/03/2026",
+    "MonthNum": "30/03/2026",
+    "TargetKg": "27",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "G|2026|3",
+    "Customer": "2",
+    "Year": "04/03/2026",
+    "MonthNum": "20/03/2026",
+    "TargetKg": "28",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "C|2026|3",
+    "Customer": "2",
+    "Year": "11/03/2026",
+    "MonthNum": "26/03/2026",
+    "TargetKg": "29",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "D|2026|3",
+    "Customer": "2",
+    "Year": "11/03/2026",
+    "MonthNum": "23/03/2026",
+    "TargetKg": "30",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "B|2026|3",
+    "Customer": "2",
+    "Year": "11/03/2026",
+    "MonthNum": "26/03/2026",
+    "TargetKg": "31",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "H|2026|3",
+    "Customer": "1",
+    "Year": "16/03/2026",
+    "MonthNum": "16/03/2026",
+    "TargetKg": "32",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "I|2026|3",
+    "Customer": "2",
+    "Year": "16/03/2026",
+    "MonthNum": "31/03/2026",
+    "TargetKg": "33",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "H|2026|4",
+    "Customer": "3",
+    "Year": "02/04/2026",
+    "MonthNum": "29/04/2026",
+    "TargetKg": "43",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "G|2026|4",
+    "Customer": "2",
+    "Year": "02/04/2026",
+    "MonthNum": "16/04/2026",
+    "TargetKg": "46",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "D|2026|4",
+    "Customer": "2",
+    "Year": "06/04/2026",
+    "MonthNum": "20/04/2026",
+    "TargetKg": "47",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "B|2026|4",
+    "Customer": "2",
+    "Year": "09/04/2026",
+    "MonthNum": "22/04/2026",
+    "TargetKg": "48",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "C|2026|4",
+    "Customer": "2",
+    "Year": "09/04/2026",
+    "MonthNum": "21/04/2026",
+    "TargetKg": "49",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "F|2026|4",
+    "Customer": "2",
+    "Year": "13/04/2026",
+    "MonthNum": "27/04/2026",
+    "TargetKg": "50",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "A|2026|4",
+    "Customer": "2",
+    "Year": "13/04/2026",
+    "MonthNum": "30/04/2026",
+    "TargetKg": "51",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "E|2026|4",
+    "Customer": "2",
+    "Year": "13/04/2026",
+    "MonthNum": "27/04/2026",
+    "TargetKg": "52",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "I|2026|4",
+    "Customer": "2",
+    "Year": "13/04/2026",
+    "MonthNum": "27/04/2026",
+    "TargetKg": "53",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "J|2026|4",
+    "Customer": "1",
+    "Year": "17/04/2026",
+    "MonthNum": "17/04/2026",
+    "TargetKg": "54",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "K|2026|4",
+    "Customer": "2",
+    "Year": "16/04/2026",
+    "MonthNum": "30/04/2026",
+    "TargetKg": "55",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "G|2026|5",
+    "Customer": "3",
+    "Year": "01/05/2026",
+    "MonthNum": "27/05/2026",
+    "TargetKg": "66",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "J|2026|5",
+    "Customer": "2",
+    "Year": "04/05/2026",
+    "MonthNum": "18/05/2026",
+    "TargetKg": "68",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "D|2026|5",
+    "Customer": "2",
+    "Year": "01/05/2026",
+    "MonthNum": "18/05/2026",
+    "TargetKg": "69",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "B|2026|5",
+    "Customer": "2",
+    "Year": "04/05/2026",
+    "MonthNum": "20/05/2026",
+    "TargetKg": "70",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "C|2026|5",
+    "Customer": "2",
+    "Year": "07/05/2026",
+    "MonthNum": "19/05/2026",
+    "TargetKg": "71",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "E|2026|5",
+    "Customer": "2",
+    "Year": "11/05/2026",
+    "MonthNum": "25/05/2026",
+    "TargetKg": "72",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "F|2026|5",
+    "Customer": "2",
+    "Year": "11/05/2026",
+    "MonthNum": "27/05/2026",
+    "TargetKg": "73",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "I|2026|5",
+    "Customer": "2",
+    "Year": "12/05/2026",
+    "MonthNum": "25/05/2026",
+    "TargetKg": "74",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "H|2026|5",
+    "Customer": "2",
+    "Year": "15/05/2026",
+    "MonthNum": "28/05/2026",
+    "TargetKg": "75",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "A|2026|5",
+    "Customer": "2",
+    "Year": "13/05/2026",
+    "MonthNum": "25/05/2026",
+    "TargetKg": "76",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "K|2026|5",
+    "Customer": "1",
+    "Year": "15/05/2026",
+    "MonthNum": "15/05/2026",
+    "TargetKg": "77",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "L|2026|5",
+    "Customer": "1",
+    "Year": "18/05/2026",
+    "MonthNum": "18/05/2026",
+    "TargetKg": "78",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "M|2026|5",
+    "Customer": "1",
+    "Year": "18/05/2026",
+    "MonthNum": "18/05/2026",
+    "TargetKg": "79",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "K|2026|6",
+    "Customer": "2",
+    "Year": "01/06/2026",
+    "MonthNum": "16/06/2026",
+    "TargetKg": "91",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "D|2026|6",
+    "Customer": "3",
+    "Year": "01/06/2026",
+    "MonthNum": "29/06/2026",
+    "TargetKg": "92",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "J|2026|6",
+    "Customer": "3",
+    "Year": "01/06/2026",
+    "MonthNum": "30/06/2026",
+    "TargetKg": "93",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "L|2026|6",
+    "Customer": "2",
+    "Year": "01/06/2026",
+    "MonthNum": "18/06/2026",
+    "TargetKg": "94",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "M|2026|6",
+    "Customer": "2",
+    "Year": "01/06/2026",
+    "MonthNum": "18/06/2026",
+    "TargetKg": "95",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "C|2026|6",
+    "Customer": "3",
+    "Year": "03/06/2026",
+    "MonthNum": "29/06/2026",
+    "TargetKg": "96",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "B|2026|6",
+    "Customer": "2",
+    "Year": "03/06/2026",
+    "MonthNum": "17/06/2026",
+    "TargetKg": "97",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "E|2026|6",
+    "Customer": "2",
+    "Year": "08/06/2026",
+    "MonthNum": "22/06/2026",
+    "TargetKg": "98",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "I|2026|6",
+    "Customer": "2",
+    "Year": "08/06/2026",
+    "MonthNum": "24/06/2026",
+    "TargetKg": "99",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "A|2026|6",
+    "Customer": "2",
+    "Year": "09/06/2026",
+    "MonthNum": "22/06/2026",
+    "TargetKg": "100",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "F|2026|6",
+    "Customer": "2",
+    "Year": "08/06/2026",
+    "MonthNum": "22/06/2026",
+    "TargetKg": "101",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "H|2026|6",
+    "Customer": "2",
+    "Year": "12/06/2026",
+    "MonthNum": "29/06/2026",
+    "TargetKg": "102",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "G|2026|6",
+    "Customer": "2",
+    "Year": "11/06/2026",
+    "MonthNum": "26/06/2026",
+    "TargetKg": "103",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "N|2026|6",
+    "Customer": "2",
+    "Year": "15/06/2026",
+    "MonthNum": "29/06/2026",
+    "TargetKg": "104",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "B|2026|7",
+    "Customer": "3",
+    "Year": "03/07/2026",
+    "MonthNum": "28/07/2026",
+    "TargetKg": "121",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "F|2026|7",
+    "Customer": "2",
+    "Year": "07/07/2026",
+    "MonthNum": "21/07/2026",
+    "TargetKg": "123",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "E|2026|7",
+    "Customer": "2",
+    "Year": "07/07/2026",
+    "MonthNum": "21/07/2026",
+    "TargetKg": "124",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "A|2026|7",
+    "Customer": "2",
+    "Year": "06/07/2026",
+    "MonthNum": "24/07/2026",
+    "TargetKg": "125",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "I|2026|7",
+    "Customer": "2",
+    "Year": "06/07/2026",
+    "MonthNum": "24/07/2026",
+    "TargetKg": "126",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "C|2026|7",
+    "Customer": "2",
+    "Year": "13/07/2026",
+    "MonthNum": "27/07/2026",
+    "TargetKg": "127",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "D|2026|7",
+    "Customer": "2",
+    "Year": "13/07/2026",
+    "MonthNum": "27/07/2026",
+    "TargetKg": "128",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "G|2026|7",
+    "Customer": "2",
+    "Year": "13/07/2026",
+    "MonthNum": "28/07/2026",
+    "TargetKg": "129",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "H|2026|7",
+    "Customer": "2",
+    "Year": "13/07/2026",
+    "MonthNum": "27/07/2026",
+    "TargetKg": "130",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "J|2026|7",
+    "Customer": "1",
+    "Year": "20/07/2026",
+    "MonthNum": "20/07/2026",
+    "TargetKg": "131",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "E|2026|8",
+    "Customer": "3",
+    "Year": "05/08/2026",
+    "MonthNum": "31/08/2026",
+    "TargetKg": "142",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "F|2026|8",
+    "Customer": "3",
+    "Year": "03/08/2026",
+    "MonthNum": "31/08/2026",
+    "TargetKg": "143",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "A|2026|8",
+    "Customer": "2",
+    "Year": "04/08/2026",
+    "MonthNum": "21/08/2026",
+    "TargetKg": "144",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "C|2026|8",
+    "Customer": "2",
+    "Year": "10/08/2026",
+    "MonthNum": "25/08/2026",
+    "TargetKg": "145",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "D|2026|8",
+    "Customer": "2",
+    "Year": "10/08/2026",
+    "MonthNum": "24/08/2026",
+    "TargetKg": "146",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "H|2026|8",
+    "Customer": "2",
+    "Year": "12/08/2026",
+    "MonthNum": "27/08/2026",
+    "TargetKg": "147",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "G|2026|8",
+    "Customer": "2",
+    "Year": "10/08/2026",
+    "MonthNum": "27/08/2026",
+    "TargetKg": "148",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "B|2026|8",
+    "Customer": "2",
+    "Year": "17/08/2026",
+    "MonthNum": "31/08/2026",
+    "TargetKg": "149",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "A|2026|9",
+    "Customer": "2",
+    "Year": "07/09/2026",
+    "MonthNum": "21/09/2026",
+    "TargetKg": "160",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "C|2026|9",
+    "Customer": "2",
+    "Year": "09/09/2026",
+    "MonthNum": "21/09/2026",
+    "TargetKg": "161",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "D|2026|9",
+    "Customer": "2",
+    "Year": "07/09/2026",
+    "MonthNum": "21/09/2026",
+    "TargetKg": "162",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "G|2026|9",
+    "Customer": "2",
+    "Year": "14/09/2026",
+    "MonthNum": "28/09/2026",
+    "TargetKg": "163",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "B|2026|9",
+    "Customer": "2",
+    "Year": "14/09/2026",
+    "MonthNum": "30/09/2026",
+    "TargetKg": "164",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "F|2026|9",
+    "Customer": "2",
+    "Year": "14/09/2026",
+    "MonthNum": "30/09/2026",
+    "TargetKg": "165",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "E|2026|9",
+    "Customer": "2",
+    "Year": "17/09/2026",
+    "MonthNum": "29/09/2026",
+    "TargetKg": "166",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "A|2026|10",
+    "Customer": "2",
+    "Year": "05/10/2026",
+    "MonthNum": "20/10/2026",
+    "TargetKg": "174",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "D|2026|10",
+    "Customer": "2",
+    "Year": "05/10/2026",
+    "MonthNum": "19/10/2026",
+    "TargetKg": "175",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "C|2026|10",
+    "Customer": "2",
+    "Year": "07/10/2026",
+    "MonthNum": "20/10/2026",
+    "TargetKg": "176",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "G|2026|10",
+    "Customer": "2",
+    "Year": "12/10/2026",
+    "MonthNum": "27/10/2026",
+    "TargetKg": "177",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "E|2026|10",
+    "Customer": "2",
+    "Year": "14/10/2026",
+    "MonthNum": "30/10/2026",
+    "TargetKg": "178",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "B|2026|10",
+    "Customer": "2",
+    "Year": "14/10/2026",
+    "MonthNum": "28/10/2026",
+    "TargetKg": "179",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "F|2026|10",
+    "Customer": "2",
+    "Year": "12/10/2026",
+    "MonthNum": "27/10/2026",
+    "TargetKg": "180",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "D|2026|11",
+    "Customer": "3",
+    "Year": "02/11/2026",
+    "MonthNum": "30/11/2026",
+    "TargetKg": "188",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "A|2026|11",
+    "Customer": "3",
+    "Year": "02/11/2026",
+    "MonthNum": "30/11/2026",
+    "TargetKg": "189",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "C|2026|11",
+    "Customer": "2",
+    "Year": "05/11/2026",
+    "MonthNum": "20/11/2026",
+    "TargetKg": "190",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "F|2026|11",
+    "Customer": "2",
+    "Year": "11/11/2026",
+    "MonthNum": "23/11/2026",
+    "TargetKg": "191",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "G|2026|11",
+    "Customer": "2",
+    "Year": "11/11/2026",
+    "MonthNum": "27/11/2026",
+    "TargetKg": "192",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "B|2026|11",
+    "Customer": "2",
+    "Year": "13/11/2026",
+    "MonthNum": "25/11/2026",
+    "TargetKg": "193",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "E|2026|11",
+    "Customer": "2",
+    "Year": "10/11/2026",
+    "MonthNum": "25/11/2026",
+    "TargetKg": "194",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "C|2026|12",
+    "Customer": "2",
+    "Year": "07/12/2026",
+    "MonthNum": "21/12/2026",
+    "TargetKg": "204",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "F|2026|12",
+    "Customer": "2",
+    "Year": "07/12/2026",
+    "MonthNum": "21/12/2026",
+    "TargetKg": "205",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "B|2026|12",
+    "Customer": "2",
+    "Year": "10/12/2026",
+    "MonthNum": "28/12/2026",
+    "TargetKg": "206",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "E|2026|12",
+    "Customer": "2",
+    "Year": "08/12/2026",
+    "MonthNum": "22/12/2026",
+    "TargetKg": "207",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "G|2026|12",
+    "Customer": "2",
+    "Year": "14/12/2026",
+    "MonthNum": "28/12/2026",
+    "TargetKg": "208",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "D|2026|12",
+    "Customer": "2",
+    "Year": "14/12/2026",
+    "MonthNum": "29/12/2026",
+    "TargetKg": "209",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  },
+  {
+    "PLAN_KEY": "A|2026|12",
+    "Customer": "2",
+    "Year": "14/12/2026",
+    "MonthNum": "28/12/2026",
+    "TargetKg": "210",
+    "FirstHalfPercent": "",
+    "ContainerSizeKg": "",
+    "RejectionRate": ""
+  }
+]

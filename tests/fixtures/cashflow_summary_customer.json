@@ -1,0 +1,1064 @@
+[
+  {
+    "Customer_ID": "A",
+    "Month": "Jan",
+    "Year": "2026",
+    "Outflows": "18662664.29",
+    "Inflows": "0",
+    "Net Cashflow": "-18662664.29",
+    "Cumulative": "-18662664.29"
+  },
+  {
+    "Customer_ID": "A",
+    "Month": "Feb",
+    "Year": "2026",
+    "Outflows": "11463209.52",
+    "Inflows": "20364471.43",
+    "Net Cashflow": "8901261.905",
+    "Cumulative": "-9761402.381"
+  },
+  {
+    "Customer_ID": "A",
+    "Month": "Mar",
+    "Year": "2026",
+    "Outflows": "4566644.444",
+    "Inflows": "12508514.29",
+    "Net Cashflow": "7941869.841",
+    "Cumulative": "-1819532.54"
+  },
+  {
+    "Customer_ID": "A",
+    "Month": "Apr",
+    "Year": "2026",
+    "Outflows": "11342477.27",
+    "Inflows": "12539412.12",
+    "Net Cashflow": "1196934.848",
+    "Cumulative": "-622597.6912"
+  },
+  {
+    "Customer_ID": "A",
+    "Month": "May",
+    "Year": "2026",
+    "Outflows": "17581939.56",
+    "Inflows": "12559717.48",
+    "Net Cashflow": "-5022222.078",
+    "Cumulative": "-5644819.769"
+  },
+  {
+    "Customer_ID": "A",
+    "Month": "Jun",
+    "Year": "2026",
+    "Outflows": "14762377.14",
+    "Inflows": "11999626.37",
+    "Net Cashflow": "-2762750.769",
+    "Cumulative": "-8407570.538"
+  },
+  {
+    "Customer_ID": "A",
+    "Month": "Jul",
+    "Year": "2026",
+    "Outflows": "23558992.5",
+    "Inflows": "16391131.43",
+    "Net Cashflow": "-7167861.071",
+    "Cumulative": "-15575431.61"
+  },
+  {
+    "Customer_ID": "A",
+    "Month": "Aug",
+    "Year": "2026",
+    "Outflows": "33655703.57",
+    "Inflows": "26158290",
+    "Net Cashflow": "-7497413.571",
+    "Cumulative": "-23072845.18"
+  },
+  {
+    "Customer_ID": "A",
+    "Month": "Sep",
+    "Year": "2026",
+    "Outflows": "41519185.71",
+    "Inflows": "37802528.57",
+    "Net Cashflow": "-3716657.143",
+    "Cumulative": "-26789502.32"
+  },
+  {
+    "Customer_ID": "A",
+    "Month": "Oct",
+    "Year": "2026",
+    "Outflows": "46551814.29",
+    "Inflows": "66789685.71",
+    "Net Cashflow": "20237871.43",
+    "Cumulative": "-6551630.895"
+  },
+  {
+    "Customer_ID": "A",
+    "Month": "Nov",
+    "Year": "2026",
+    "Outflows": "19291742.86",
+    "Inflows": "43579085.71",
+    "Net Cashflow": "24287342.86",
+    "Cumulative": "17735711.96"
+  },
+  {
+    "Customer_ID": "A",
+    "Month": "Dec",
+    "Year": "2026",
+    "Outflows": "51374750",
+    "Inflows": "45710671.43",
+    "Net Cashflow": "-5664078.571",
+    "Cumulative": "12071633.39"
+  },
+  {
+    "Customer_ID": "A",
+    "Month": "Jan",
+    "Year": "2027",
+    "Outflows": "0",
+    "Inflows": "23210600",
+    "Net Cashflow": "23210600",
+    "Cumulative": "35282233.39"
+  },
+  {
+    "Customer_ID": "B",
+    "Month": "Jan",
+    "Year": "2026",
+    "Outflows": "18662664.29",
+    "Inflows": "7688160",
+    "Net Cashflow": "-10974504.29",
+    "Cumulative": "-10974504.29"
+  },
+  {
+    "Customer_ID": "B",
+    "Month": "Feb",
+    "Year": "2026",
+    "Outflows": "9793242.857",
+    "Inflows": "12676311.43",
+    "Net Cashflow": "2883068.571",
+    "Cumulative": "-8091435.714"
+  },
+  {
+    "Customer_ID": "B",
+    "Month": "Mar",
+    "Year": "2026",
+    "Outflows": "13042097.47",
+    "Inflows": "12508514.29",
+    "Net Cashflow": "-533583.189",
+    "Cumulative": "-8625018.903"
+  },
+  {
+    "Customer_ID": "B",
+    "Month": "Apr",
+    "Year": "2026",
+    "Outflows": "11311683.22",
+    "Inflows": "12539412.12",
+    "Net Cashflow": "1227728.904",
+    "Cumulative": "-7397289.999"
+  },
+  {
+    "Customer_ID": "B",
+    "Month": "May",
+    "Year": "2026",
+    "Outflows": "10807247.25",
+    "Inflows": "12559717.48",
+    "Net Cashflow": "1752470.23",
+    "Cumulative": "-5644819.769"
+  },
+  {
+    "Customer_ID": "B",
+    "Month": "Jun",
+    "Year": "2026",
+    "Outflows": "14762377.14",
+    "Inflows": "11999626.37",
+    "Net Cashflow": "-2762750.769",
+    "Cumulative": "-8407570.538"
+  },
+  {
+    "Customer_ID": "B",
+    "Month": "Jul",
+    "Year": "2026",
+    "Outflows": "17451930",
+    "Inflows": "20302651.43",
+    "Net Cashflow": "2850721.429",
+    "Cumulative": "-5556849.11"
+  },
+  {
+    "Customer_ID": "B",
+    "Month": "Aug",
+    "Year": "2026",
+    "Outflows": "17115937.5",
+    "Inflows": "19190895",
+    "Net Cashflow": "2074957.5",
+    "Cumulative": "-3481891.61"
+  },
+  {
+    "Customer_ID": "B",
+    "Month": "Sep",
+    "Year": "2026",
+    "Outflows": "37744714.29",
+    "Inflows": "40858403.57",
+    "Net Cashflow": "3113689.286",
+    "Cumulative": "-368202.3241"
+  },
+  {
+    "Customer_ID": "B",
+    "Month": "Oct",
+    "Year": "2026",
+    "Outflows": "65918357.14",
+    "Inflows": "46894885.71",
+    "Net Cashflow": "-19023471.43",
+    "Cumulative": "-19391673.75"
+  },
+  {
+    "Customer_ID": "B",
+    "Month": "Nov",
+    "Year": "2026",
+    "Outflows": "55736420",
+    "Inflows": "52579114.29",
+    "Net Cashflow": "-3157305.714",
+    "Cumulative": "-22548979.47"
+  },
+  {
+    "Customer_ID": "B",
+    "Month": "Dec",
+    "Year": "2026",
+    "Outflows": "21984830",
+    "Inflows": "56605442.86",
+    "Net Cashflow": "34620612.86",
+    "Cumulative": "12071633.39"
+  },
+  {
+    "Customer_ID": "B",
+    "Month": "Jan",
+    "Year": "2027",
+    "Outflows": "0",
+    "Inflows": "23210600",
+    "Net Cashflow": "23210600",
+    "Cumulative": "35282233.39"
+  },
+  {
+    "Customer_ID": "C",
+    "Month": "Jan",
+    "Year": "2026",
+    "Outflows": "18662664.29",
+    "Inflows": "7688160",
+    "Net Cashflow": "-10974504.29",
+    "Cumulative": "-10974504.29"
+  },
+  {
+    "Customer_ID": "C",
+    "Month": "Feb",
+    "Year": "2026",
+    "Outflows": "9996242.857",
+    "Inflows": "12676311.43",
+    "Net Cashflow": "2680068.571",
+    "Cumulative": "-8294435.714"
+  },
+  {
+    "Customer_ID": "C",
+    "Month": "Mar",
+    "Year": "2026",
+    "Outflows": "12522294.75",
+    "Inflows": "12508514.29",
+    "Net Cashflow": "-13780.46176",
+    "Cumulative": "-8308216.176"
+  },
+  {
+    "Customer_ID": "C",
+    "Month": "Apr",
+    "Year": "2026",
+    "Outflows": "11628485.94",
+    "Inflows": "12539412.12",
+    "Net Cashflow": "910926.1772",
+    "Cumulative": "-7397289.999"
+  },
+  {
+    "Customer_ID": "C",
+    "Month": "May",
+    "Year": "2026",
+    "Outflows": "10807247.25",
+    "Inflows": "12559717.48",
+    "Net Cashflow": "1752470.23",
+    "Cumulative": "-5644819.769"
+  },
+  {
+    "Customer_ID": "C",
+    "Month": "Jun",
+    "Year": "2026",
+    "Outflows": "12185857.14",
+    "Inflows": "11999626.37",
+    "Net Cashflow": "-186230.7692",
+    "Cumulative": "-5831050.538"
+  },
+  {
+    "Customer_ID": "C",
+    "Month": "Jul",
+    "Year": "2026",
+    "Outflows": "26135512.5",
+    "Inflows": "16391131.43",
+    "Net Cashflow": "-9744381.071",
+    "Cumulative": "-15575431.61"
+  },
+  {
+    "Customer_ID": "C",
+    "Month": "Aug",
+    "Year": "2026",
+    "Outflows": "33655703.57",
+    "Inflows": "26158290",
+    "Net Cashflow": "-7497413.571",
+    "Cumulative": "-23072845.18"
+  },
+  {
+    "Customer_ID": "C",
+    "Month": "Sep",
+    "Year": "2026",
+    "Outflows": "41519185.71",
+    "Inflows": "37802528.57",
+    "Net Cashflow": "-3716657.143",
+    "Cumulative": "-26789502.32"
+  },
+  {
+    "Customer_ID": "C",
+    "Month": "Oct",
+    "Year": "2026",
+    "Outflows": "46551814.29",
+    "Inflows": "66789685.71",
+    "Net Cashflow": "20237871.43",
+    "Cumulative": "-6551630.895"
+  },
+  {
+    "Customer_ID": "C",
+    "Month": "Nov",
+    "Year": "2026",
+    "Outflows": "50116592.86",
+    "Inflows": "32684314.29",
+    "Net Cashflow": "-17432278.57",
+    "Cumulative": "-23983909.47"
+  },
+  {
+    "Customer_ID": "C",
+    "Month": "Dec",
+    "Year": "2026",
+    "Outflows": "20549900",
+    "Inflows": "56605442.86",
+    "Net Cashflow": "36055542.86",
+    "Cumulative": "12071633.39"
+  },
+  {
+    "Customer_ID": "C",
+    "Month": "Jan",
+    "Year": "2027",
+    "Outflows": "0",
+    "Inflows": "23210600",
+    "Net Cashflow": "23210600",
+    "Cumulative": "35282233.39"
+  },
+  {
+    "Customer_ID": "D",
+    "Month": "Jan",
+    "Year": "2026",
+    "Outflows": "17180728.57",
+    "Inflows": "7688160",
+    "Net Cashflow": "-9492568.571",
+    "Cumulative": "-9492568.571"
+  },
+  {
+    "Customer_ID": "D",
+    "Month": "Feb",
+    "Year": "2026",
+    "Outflows": "12626271.9",
+    "Inflows": "12676311.43",
+    "Net Cashflow": "50039.52381",
+    "Cumulative": "-9442529.048"
+  },
+  {
+    "Customer_ID": "D",
+    "Month": "Mar",
+    "Year": "2026",
+    "Outflows": "11691004.14",
+    "Inflows": "12508514.29",
+    "Net Cashflow": "817510.1443",
+    "Cumulative": "-8625018.903"
+  },
+  {
+    "Customer_ID": "D",
+    "Month": "Apr",
+    "Year": "2026",
+    "Outflows": "11311683.22",
+    "Inflows": "12539412.12",
+    "Net Cashflow": "1227728.904",
+    "Cumulative": "-7397289.999"
+  },
+  {
+    "Customer_ID": "D",
+    "Month": "May",
+    "Year": "2026",
+    "Outflows": "7661854.396",
+    "Inflows": "12559717.48",
+    "Net Cashflow": "4897863.087",
+    "Cumulative": "-2499426.912"
+  },
+  {
+    "Customer_ID": "D",
+    "Month": "Jun",
+    "Year": "2026",
+    "Outflows": "15644450",
+    "Inflows": "11999626.37",
+    "Net Cashflow": "-3644823.626",
+    "Cumulative": "-6144250.538"
+  },
+  {
+    "Customer_ID": "D",
+    "Month": "Jul",
+    "Year": "2026",
+    "Outflows": "25822312.5",
+    "Inflows": "16391131.43",
+    "Net Cashflow": "-9431181.071",
+    "Cumulative": "-15575431.61"
+  },
+  {
+    "Customer_ID": "D",
+    "Month": "Aug",
+    "Year": "2026",
+    "Outflows": "33655703.57",
+    "Inflows": "26158290",
+    "Net Cashflow": "-7497413.571",
+    "Cumulative": "-23072845.18"
+  },
+  {
+    "Customer_ID": "D",
+    "Month": "Sep",
+    "Year": "2026",
+    "Outflows": "41519185.71",
+    "Inflows": "37802528.57",
+    "Net Cashflow": "-3716657.143",
+    "Cumulative": "-26789502.32"
+  },
+  {
+    "Customer_ID": "D",
+    "Month": "Oct",
+    "Year": "2026",
+    "Outflows": "46551814.29",
+    "Inflows": "66789685.71",
+    "Net Cashflow": "20237871.43",
+    "Cumulative": "-6551630.895"
+  },
+  {
+    "Customer_ID": "D",
+    "Month": "Nov",
+    "Year": "2026",
+    "Outflows": "19291742.86",
+    "Inflows": "43579085.71",
+    "Net Cashflow": "24287342.86",
+    "Cumulative": "17735711.96"
+  },
+  {
+    "Customer_ID": "D",
+    "Month": "Dec",
+    "Year": "2026",
+    "Outflows": "51374750",
+    "Inflows": "45710671.43",
+    "Net Cashflow": "-5664078.571",
+    "Cumulative": "12071633.39"
+  },
+  {
+    "Customer_ID": "D",
+    "Month": "Jan",
+    "Year": "2027",
+    "Outflows": "0",
+    "Inflows": "23210600",
+    "Net Cashflow": "23210600",
+    "Cumulative": "35282233.39"
+  },
+  {
+    "Customer_ID": "E",
+    "Month": "Jan",
+    "Year": "2026",
+    "Outflows": "20464228.57",
+    "Inflows": "7688160",
+    "Net Cashflow": "-12776068.57",
+    "Cumulative": "-12776068.57"
+  },
+  {
+    "Customer_ID": "E",
+    "Month": "Feb",
+    "Year": "2026",
+    "Outflows": "9661645.238",
+    "Inflows": "5125440",
+    "Net Cashflow": "-4536205.238",
+    "Cumulative": "-17312273.81"
+  },
+  {
+    "Customer_ID": "E",
+    "Month": "Mar",
+    "Year": "2026",
+    "Outflows": "4566644.444",
+    "Inflows": "20059385.71",
+    "Net Cashflow": "15492741.27",
+    "Cumulative": "-1819532.54"
+  },
+  {
+    "Customer_ID": "E",
+    "Month": "Apr",
+    "Year": "2026",
+    "Outflows": "18117169.58",
+    "Inflows": "12539412.12",
+    "Net Cashflow": "-5577757.459",
+    "Cumulative": "-7397289.999"
+  },
+  {
+    "Customer_ID": "E",
+    "Month": "May",
+    "Year": "2026",
+    "Outflows": "10807247.25",
+    "Inflows": "12559717.48",
+    "Net Cashflow": "1752470.23",
+    "Cumulative": "-5644819.769"
+  },
+  {
+    "Customer_ID": "E",
+    "Month": "Jun",
+    "Year": "2026",
+    "Outflows": "14762377.14",
+    "Inflows": "11999626.37",
+    "Net Cashflow": "-2762750.769",
+    "Cumulative": "-8407570.538"
+  },
+  {
+    "Customer_ID": "E",
+    "Month": "Jul",
+    "Year": "2026",
+    "Outflows": "23558992.5",
+    "Inflows": "16391131.43",
+    "Net Cashflow": "-7167861.071",
+    "Cumulative": "-15575431.61"
+  },
+  {
+    "Customer_ID": "E",
+    "Month": "Aug",
+    "Year": "2026",
+    "Outflows": "11008875",
+    "Inflows": "32270040",
+    "Net Cashflow": "21261165",
+    "Cumulative": "5685733.39"
+  },
+  {
+    "Customer_ID": "E",
+    "Month": "Sep",
+    "Year": "2026",
+    "Outflows": "57724714.29",
+    "Inflows": "27427607.14",
+    "Net Cashflow": "-30297107.14",
+    "Cumulative": "-24611373.75"
+  },
+  {
+    "Customer_ID": "E",
+    "Month": "Oct",
+    "Year": "2026",
+    "Outflows": "46795928.57",
+    "Inflows": "51158057.14",
+    "Net Cashflow": "4362128.571",
+    "Cumulative": "-20249245.18"
+  },
+  {
+    "Customer_ID": "E",
+    "Month": "Nov",
+    "Year": "2026",
+    "Outflows": "56313778.57",
+    "Inflows": "52579114.29",
+    "Net Cashflow": "-3734664.286",
+    "Cumulative": "-23983909.47"
+  },
+  {
+    "Customer_ID": "E",
+    "Month": "Dec",
+    "Year": "2026",
+    "Outflows": "20549900",
+    "Inflows": "56605442.86",
+    "Net Cashflow": "36055542.86",
+    "Cumulative": "12071633.39"
+  },
+  {
+    "Customer_ID": "E",
+    "Month": "Jan",
+    "Year": "2027",
+    "Outflows": "0",
+    "Inflows": "23210600",
+    "Net Cashflow": "23210600",
+    "Cumulative": "35282233.39"
+  },
+  {
+    "Customer_ID": "F",
+    "Month": "Feb",
+    "Year": "2026",
+    "Outflows": "18383073.81",
+    "Inflows": "0",
+    "Net Cashflow": "-18383073.81",
+    "Cumulative": "-18383073.81"
+  },
+  {
+    "Customer_ID": "F",
+    "Month": "Mar",
+    "Year": "2026",
+    "Outflows": "9914689.899",
+    "Inflows": "20059385.71",
+    "Net Cashflow": "10144695.82",
+    "Cumulative": "-8238377.994"
+  },
+  {
+    "Customer_ID": "F",
+    "Month": "Apr",
+    "Year": "2026",
+    "Outflows": "11318277.97",
+    "Inflows": "12539412.12",
+    "Net Cashflow": "1221134.149",
+    "Cumulative": "-7017243.845"
+  },
+  {
+    "Customer_ID": "F",
+    "Month": "May",
+    "Year": "2026",
+    "Outflows": "12258093.41",
+    "Inflows": "12559717.48",
+    "Net Cashflow": "301624.0759",
+    "Cumulative": "-6715619.769"
+  },
+  {
+    "Customer_ID": "F",
+    "Month": "Jun",
+    "Year": "2026",
+    "Outflows": "14762377.14",
+    "Inflows": "11999626.37",
+    "Net Cashflow": "-2762750.769",
+    "Cumulative": "-9478370.538"
+  },
+  {
+    "Customer_ID": "F",
+    "Month": "Jul",
+    "Year": "2026",
+    "Outflows": "23558992.5",
+    "Inflows": "16391131.43",
+    "Net Cashflow": "-7167861.071",
+    "Cumulative": "-16646231.61"
+  },
+  {
+    "Customer_ID": "F",
+    "Month": "Aug",
+    "Year": "2026",
+    "Outflows": "11008875",
+    "Inflows": "32270040",
+    "Net Cashflow": "21261165",
+    "Cumulative": "4614933.39"
+  },
+  {
+    "Customer_ID": "F",
+    "Month": "Sep",
+    "Year": "2026",
+    "Outflows": "37744714.29",
+    "Inflows": "31690778.57",
+    "Net Cashflow": "-6053935.714",
+    "Cumulative": "-1439002.324"
+  },
+  {
+    "Customer_ID": "F",
+    "Month": "Oct",
+    "Year": "2026",
+    "Outflows": "71626037.14",
+    "Inflows": "46894885.71",
+    "Net Cashflow": "-24731151.43",
+    "Cumulative": "-26170153.75"
+  },
+  {
+    "Customer_ID": "F",
+    "Month": "Nov",
+    "Year": "2026",
+    "Outflows": "51463670",
+    "Inflows": "52579114.29",
+    "Net Cashflow": "1115444.286",
+    "Cumulative": "-25054709.47"
+  },
+  {
+    "Customer_ID": "F",
+    "Month": "Dec",
+    "Year": "2026",
+    "Outflows": "20549900",
+    "Inflows": "56605442.86",
+    "Net Cashflow": "36055542.86",
+    "Cumulative": "11000833.39"
+  },
+  {
+    "Customer_ID": "F",
+    "Month": "Jan",
+    "Year": "2027",
+    "Outflows": "0",
+    "Inflows": "23210600",
+    "Net Cashflow": "23210600",
+    "Cumulative": "34211433.39"
+  },
+  {
+    "Customer_ID": "G",
+    "Month": "Feb",
+    "Year": "2026",
+    "Outflows": "17005454.76",
+    "Inflows": "0",
+    "Net Cashflow": "-17005454.76",
+    "Cumulative": "-17005454.76"
+  },
+  {
+    "Customer_ID": "G",
+    "Month": "Mar",
+    "Year": "2026",
+    "Outflows": "11372130.81",
+    "Inflows": "20059385.71",
+    "Net Cashflow": "8687254.906",
+    "Cumulative": "-8318199.856"
+  },
+  {
+    "Customer_ID": "G",
+    "Month": "Apr",
+    "Year": "2026",
+    "Outflows": "7924337.063",
+    "Inflows": "12539412.12",
+    "Net Cashflow": "4615075.058",
+    "Cumulative": "-3703124.797"
+  },
+  {
+    "Customer_ID": "G",
+    "Month": "May",
+    "Year": "2026",
+    "Outflows": "13901750.55",
+    "Inflows": "12559717.48",
+    "Net Cashflow": "-1342033.067",
+    "Cumulative": "-5045157.864"
+  },
+  {
+    "Customer_ID": "G",
+    "Month": "Jun",
+    "Year": "2026",
+    "Outflows": "12478700",
+    "Inflows": "11999626.37",
+    "Net Cashflow": "-479073.6264",
+    "Cumulative": "-5524231.491"
+  },
+  {
+    "Customer_ID": "G",
+    "Month": "Jul",
+    "Year": "2026",
+    "Outflows": "25366800",
+    "Inflows": "16391131.43",
+    "Net Cashflow": "-8975668.571",
+    "Cumulative": "-14499900.06"
+  },
+  {
+    "Customer_ID": "G",
+    "Month": "Aug",
+    "Year": "2026",
+    "Outflows": "27052301.79",
+    "Inflows": "26158290",
+    "Net Cashflow": "-894011.7857",
+    "Cumulative": "-15393911.85"
+  },
+  {
+    "Customer_ID": "G",
+    "Month": "Sep",
+    "Year": "2026",
+    "Outflows": "36816428.57",
+    "Inflows": "37802528.57",
+    "Net Cashflow": "986100",
+    "Cumulative": "-14407811.85"
+  },
+  {
+    "Customer_ID": "G",
+    "Month": "Oct",
+    "Year": "2026",
+    "Outflows": "42449785.71",
+    "Inflows": "46894885.71",
+    "Net Cashflow": "4445100",
+    "Cumulative": "-9962711.848"
+  },
+  {
+    "Customer_ID": "G",
+    "Month": "Nov",
+    "Year": "2026",
+    "Outflows": "45900785.71",
+    "Inflows": "52579114.29",
+    "Net Cashflow": "6678328.571",
+    "Cumulative": "-3284383.276"
+  },
+  {
+    "Customer_ID": "G",
+    "Month": "Dec",
+    "Year": "2026",
+    "Outflows": "26524750",
+    "Inflows": "56605442.86",
+    "Net Cashflow": "30080692.86",
+    "Cumulative": "26796309.58"
+  },
+  {
+    "Customer_ID": "G",
+    "Month": "Jan",
+    "Year": "2027",
+    "Outflows": "0",
+    "Inflows": "23210600",
+    "Net Cashflow": "23210600",
+    "Cumulative": "50006909.58"
+  },
+  {
+    "Customer_ID": "H",
+    "Month": "Mar",
+    "Year": "2026",
+    "Outflows": "13708798.74",
+    "Inflows": "0",
+    "Net Cashflow": "-13708798.74",
+    "Cumulative": "-13708798.74"
+  },
+  {
+    "Customer_ID": "H",
+    "Month": "Apr",
+    "Year": "2026",
+    "Outflows": "13062811.01",
+    "Inflows": "20014012.12",
+    "Net Cashflow": "6951201.107",
+    "Cumulative": "-6757597.63"
+  },
+  {
+    "Customer_ID": "H",
+    "Month": "May",
+    "Year": "2026",
+    "Outflows": "10925219.78",
+    "Inflows": "12559717.48",
+    "Net Cashflow": "1634497.702",
+    "Cumulative": "-5123099.928"
+  },
+  {
+    "Customer_ID": "H",
+    "Month": "Jun",
+    "Year": "2026",
+    "Outflows": "13719500",
+    "Inflows": "11999626.37",
+    "Net Cashflow": "-1719873.626",
+    "Cumulative": "-6842973.554"
+  },
+  {
+    "Customer_ID": "H",
+    "Month": "Jul",
+    "Year": "2026",
+    "Outflows": "22599075",
+    "Inflows": "16391131.43",
+    "Net Cashflow": "-6207943.571",
+    "Cumulative": "-13050917.13"
+  },
+  {
+    "Customer_ID": "H",
+    "Month": "Aug",
+    "Year": "2026",
+    "Outflows": "13720312.5",
+    "Inflows": "26158290",
+    "Net Cashflow": "12437977.5",
+    "Cumulative": "-612939.6257"
+  },
+  {
+    "Customer_ID": "H",
+    "Month": "Sep",
+    "Year": "2026",
+    "Outflows": "0",
+    "Inflows": "12223500",
+    "Net Cashflow": "12223500",
+    "Cumulative": "11610560.37"
+  },
+  {
+    "Customer_ID": "I",
+    "Month": "Mar",
+    "Year": "2026",
+    "Outflows": "10561055.56",
+    "Inflows": "0",
+    "Net Cashflow": "-10561055.56",
+    "Cumulative": "-10561055.56"
+  },
+  {
+    "Customer_ID": "I",
+    "Month": "Apr",
+    "Year": "2026",
+    "Outflows": "16666323.43",
+    "Inflows": "20014012.12",
+    "Net Cashflow": "3347688.695",
+    "Cumulative": "-7213366.861"
+  },
+  {
+    "Customer_ID": "I",
+    "Month": "May",
+    "Year": "2026",
+    "Outflows": "12258093.41",
+    "Inflows": "12559717.48",
+    "Net Cashflow": "301624.0759",
+    "Cumulative": "-6911742.785"
+  },
+  {
+    "Customer_ID": "I",
+    "Month": "Jun",
+    "Year": "2026",
+    "Outflows": "14762377.14",
+    "Inflows": "11999626.37",
+    "Net Cashflow": "-2762750.769",
+    "Cumulative": "-9674493.554"
+  },
+  {
+    "Customer_ID": "I",
+    "Month": "Jul",
+    "Year": "2026",
+    "Outflows": "6517680",
+    "Inflows": "16391131.43",
+    "Net Cashflow": "9873451.429",
+    "Cumulative": "198957.8743"
+  },
+  {
+    "Customer_ID": "I",
+    "Month": "Aug",
+    "Year": "2026",
+    "Outflows": "0",
+    "Inflows": "7823040",
+    "Net Cashflow": "7823040",
+    "Cumulative": "8021997.874"
+  },
+  {
+    "Customer_ID": "J",
+    "Month": "Apr",
+    "Year": "2026",
+    "Outflows": "16759477.27",
+    "Inflows": "0",
+    "Net Cashflow": "-16759477.27",
+    "Cumulative": "-16759477.27"
+  },
+  {
+    "Customer_ID": "J",
+    "Month": "May",
+    "Year": "2026",
+    "Outflows": "7661854.396",
+    "Inflows": "20116062.94",
+    "Net Cashflow": "12454208.54",
+    "Cumulative": "-4305268.731"
+  },
+  {
+    "Customer_ID": "J",
+    "Month": "Jun",
+    "Year": "2026",
+    "Outflows": "7339250",
+    "Inflows": "11999626.37",
+    "Net Cashflow": "4660376.374",
+    "Cumulative": "355107.6424"
+  },
+  {
+    "Customer_ID": "J",
+    "Month": "Jul",
+    "Year": "2026",
+    "Outflows": "16294200",
+    "Inflows": "4656571.429",
+    "Net Cashflow": "-11637628.57",
+    "Cumulative": "-11282520.93"
+  },
+  {
+    "Customer_ID": "J",
+    "Month": "Aug",
+    "Year": "2026",
+    "Outflows": "0",
+    "Inflows": "19557600",
+    "Net Cashflow": "19557600",
+    "Cumulative": "8275079.071"
+  },
+  {
+    "Customer_ID": "K",
+    "Month": "Apr",
+    "Year": "2026",
+    "Outflows": "10492477.27",
+    "Inflows": "0",
+    "Net Cashflow": "-10492477.27",
+    "Cumulative": "-10492477.27"
+  },
+  {
+    "Customer_ID": "K",
+    "Month": "May",
+    "Year": "2026",
+    "Outflows": "16264357.14",
+    "Inflows": "25130832.17",
+    "Net Cashflow": "8866475.025",
+    "Cumulative": "-1626002.248"
+  },
+  {
+    "Customer_ID": "K",
+    "Month": "Jun",
+    "Year": "2026",
+    "Outflows": "4193857.143",
+    "Inflows": "11641428.57",
+    "Net Cashflow": "7447571.429",
+    "Cumulative": "5821569.181"
+  },
+  {
+    "Customer_ID": "L",
+    "Month": "May",
+    "Year": "2026",
+    "Outflows": "16264357.14",
+    "Inflows": "0",
+    "Net Cashflow": "-16264357.14",
+    "Cumulative": "-16264357.14"
+  },
+  {
+    "Customer_ID": "L",
+    "Month": "Jun",
+    "Year": "2026",
+    "Outflows": "3879571.429",
+    "Inflows": "19521780.22",
+    "Net Cashflow": "15642208.79",
+    "Cumulative": "-622148.3516"
+  },
+  {
+    "Customer_ID": "L",
+    "Month": "Jul",
+    "Year": "2026",
+    "Outflows": "0",
+    "Inflows": "4656571.429",
+    "Net Cashflow": "4656571.429",
+    "Cumulative": "4034423.077"
+  },
+  {
+    "Customer_ID": "M",
+    "Month": "May",
+    "Year": "2026",
+    "Outflows": "16264357.14",
+    "Inflows": "0",
+    "Net Cashflow": "-16264357.14",
+    "Cumulative": "-16264357.14"
+  },
+  {
+    "Customer_ID": "M",
+    "Month": "Jun",
+    "Year": "2026",
+    "Outflows": "3879571.429",
+    "Inflows": "19521780.22",
+    "Net Cashflow": "15642208.79",
+    "Cumulative": "-622148.3516"
+  },
+  {
+    "Customer_ID": "M",
+    "Month": "Jul",
+    "Year": "2026",
+    "Outflows": "0",
+    "Inflows": "4656571.429",
+    "Net Cashflow": "4656571.429",
+    "Cumulative": "4034423.077"
+  },
+  {
+    "Customer_ID": "N",
+    "Month": "Jun",
+    "Year": "2026",
+    "Outflows": "9698928.571",
+    "Inflows": "6984857.143",
+    "Net Cashflow": "-2714071.429",
+    "Cumulative": "-2714071.429"
+  },
+  {
+    "Customer_ID": "N",
+    "Month": "Jul",
+    "Year": "2026",
+    "Outflows": "0",
+    "Inflows": "4656571.429",
+    "Net Cashflow": "4656571.429",
+    "Cumulative": "1942500"
+  }
+]

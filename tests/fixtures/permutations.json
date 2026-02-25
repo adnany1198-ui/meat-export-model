@@ -1,0 +1,156 @@
+[
+  {
+    "PROC_MODEL": "Internal ",
+    "PATTERN ": "1STMANDI_AFTER_CASH_OUT_SLAUGHTER_SAME_DAY",
+    "MANDI_SKIP_COUNT": "0",
+    "SLAUGHTER_LAG_DURATION": "0",
+    "LEAD_DAYS_TO_SLAUGHTER": "N/A"
+  },
+  {
+    "PROC_MODEL": "Internal ",
+    "PATTERN ": "1STMANDI_AFTER_CASH_OUT_SLAUGHTER_NEXT_DAY",
+    "MANDI_SKIP_COUNT": "0",
+    "SLAUGHTER_LAG_DURATION": "1",
+    "LEAD_DAYS_TO_SLAUGHTER": "N/A"
+  },
+  {
+    "PROC_MODEL": "Internal ",
+    "PATTERN ": "2NDMANDI_AFTER_CASH_OUT_SLAUGHTER_NEXT_DAY",
+    "MANDI_SKIP_COUNT": "1",
+    "SLAUGHTER_LAG_DURATION": "1",
+    "LEAD_DAYS_TO_SLAUGHTER": "N/A"
+  },
+  {
+    "PROC_MODEL": "Internal ",
+    "PATTERN ": "2NDMANDI_AFTER_CASH_OUT_SLAUGHTER_SAME_DAY",
+    "MANDI_SKIP_COUNT": "1",
+    "SLAUGHTER_LAG_DURATION": "0",
+    "LEAD_DAYS_TO_SLAUGHTER": "N/A"
+  },
+  {
+    "PROC_MODEL": "Supplier ",
+    "PATTERN ": "SUPP_LEAD0",
+    "MANDI_SKIP_COUNT": "N/A",
+    "SLAUGHTER_LAG_DURATION": "N/A",
+    "LEAD_DAYS_TO_SLAUGHTER": "0"
+  },
+  {
+    "PROC_MODEL": "Supplier ",
+    "PATTERN ": "SUPP_LEAD1",
+    "MANDI_SKIP_COUNT": "N/A",
+    "SLAUGHTER_LAG_DURATION": "N/A",
+    "LEAD_DAYS_TO_SLAUGHTER": "1"
+  },
+  {
+    "PROC_MODEL": "Supplier ",
+    "PATTERN ": "SUPP_LEAD2",
+    "MANDI_SKIP_COUNT": "N/A",
+    "SLAUGHTER_LAG_DURATION": "N/A",
+    "LEAD_DAYS_TO_SLAUGHTER": "2"
+  },
+  {
+    "PROC_MODEL": "Supplier ",
+    "PATTERN ": "SUPP_LEAD3",
+    "MANDI_SKIP_COUNT": "N/A",
+    "SLAUGHTER_LAG_DURATION": "N/A",
+    "LEAD_DAYS_TO_SLAUGHTER": "3"
+  },
+  {
+    "PROC_MODEL": "",
+    "PATTERN ": "",
+    "MANDI_SKIP_COUNT": "",
+    "SLAUGHTER_LAG_DURATION": "",
+    "LEAD_DAYS_TO_SLAUGHTER": ""
+  },
+  {
+    "PROC_MODEL": "",
+    "PATTERN ": "",
+    "MANDI_SKIP_COUNT": "",
+    "SLAUGHTER_LAG_DURATION": "",
+    "LEAD_DAYS_TO_SLAUGHTER": ""
+  },
+  {
+    "PROC_MODEL": "Notes",
+    "PATTERN ": "",
+    "MANDI_SKIP_COUNT": "",
+    "SLAUGHTER_LAG_DURATION": "",
+    "LEAD_DAYS_TO_SLAUGHTER": ""
+  },
+  {
+    "PROC_MODEL": "Assuming that supplier cash out rules are not dependent on weekdays and that even if they have to go to the mandi multiple times, for the supplier this will always occur within 3 days",
+    "PATTERN ": "",
+    "MANDI_SKIP_COUNT": "",
+    "SLAUGHTER_LAG_DURATION": "",
+    "LEAD_DAYS_TO_SLAUGHTER": ""
+  },
+  {
+    "PROC_MODEL": "",
+    "PATTERN ": "",
+    "MANDI_SKIP_COUNT": "",
+    "SLAUGHTER_LAG_DURATION": "",
+    "LEAD_DAYS_TO_SLAUGHTER": ""
+  },
+  {
+    "PROC_MODEL": "RULES ",
+    "PATTERN ": "",
+    "MANDI_SKIP_COUNT": "",
+    "SLAUGHTER_LAG_DURATION": "",
+    "LEAD_DAYS_TO_SLAUGHTER": ""
+  },
+  {
+    "PROC_MODEL": "",
+    "PATTERN ": "",
+    "MANDI_SKIP_COUNT": "",
+    "SLAUGHTER_LAG_DURATION": "",
+    "LEAD_DAYS_TO_SLAUGHTER": ""
+  },
+  {
+    "PROC_MODEL": "Mandi = Tues, Weds, Sat, Sun ",
+    "PATTERN ": "",
+    "MANDI_SKIP_COUNT": "",
+    "SLAUGHTER_LAG_DURATION": "",
+    "LEAD_DAYS_TO_SLAUGHTER": ""
+  },
+  {
+    "PROC_MODEL": "Cash out cannot be done on a weekend. ",
+    "PATTERN ": "",
+    "MANDI_SKIP_COUNT": "",
+    "SLAUGHTER_LAG_DURATION": "",
+    "LEAD_DAYS_TO_SLAUGHTER": ""
+  },
+  {
+    "PROC_MODEL": "May require an extra day to at the Mandi if the price is too high one day ",
+    "PATTERN ": "",
+    "MANDI_SKIP_COUNT": "",
+    "SLAUGHTER_LAG_DURATION": "",
+    "LEAD_DAYS_TO_SLAUGHTER": ""
+  },
+  {
+    "PROC_MODEL": "",
+    "PATTERN ": "",
+    "MANDI_SKIP_COUNT": "",
+    "SLAUGHTER_LAG_DURATION": "",
+    "LEAD_DAYS_TO_SLAUGHTER": ""
+  },
+  {
+    "PROC_MODEL": "",
+    "PATTERN ": "",
+    "MANDI_SKIP_COUNT": "",
+    "SLAUGHTER_LAG_DURATION": "",
+    "LEAD_DAYS_TO_SLAUGHTER": ""
+  },
+  {
+    "PROC_MODEL": "Can get out on any day but requires notice - allow for 0-3 days (for 0, we would get the stock in the AM and by the eve be with the slaughterhouse)",
+    "PATTERN ": "",
+    "MANDI_SKIP_COUNT": "",
+    "SLAUGHTER_LAG_DURATION": "",
+    "LEAD_DAYS_TO_SLAUGHTER": ""
+  },
+  {
+    "PROC_MODEL": "When does payment happen (on first day, as soon as you inititate the supplier? or on the day when they deliver to slaughter?)",
+    "PATTERN ": "",
+    "MANDI_SKIP_COUNT": "",
+    "SLAUGHTER_LAG_DURATION": "",
+    "LEAD_DAYS_TO_SLAUGHTER": ""
+  }
+]

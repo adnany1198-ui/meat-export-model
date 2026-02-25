@@ -1,0 +1,90 @@
+[
+  {
+    "🔍 MODEL VALIDATION REPORT": "",
+    "": ""
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "Checks that Strategy_Control has been correctly applied throughout the model",
+    "": ""
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "",
+    "": ""
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "📊 VALIDATION SUMMARY",
+    "": ""
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "",
+    "": ""
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "Total Checks:",
+    "": ""
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "✅ Passed:",
+    "": ""
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "⚠️ Warnings:",
+    "": ""
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "❌ Failed:",
+    "": ""
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "",
+    "": ""
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "OVERALL STATUS:",
+    "": ""
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "",
+    "": ""
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "",
+    "": ""
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "🔍 DETAILED CHECK RESULTS",
+    "": ""
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "",
+    "": ""
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "Check",
+    "": "Details"
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "Tonnage Targets",
+    "": "12 months validated"
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "Procurement Mix",
+    "": "Feb-2026: 80%→86%; Sep-2026: 80%→86%; Oct-2026: 80%→86%"
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "Credit Terms",
+    "": "10 payments checked"
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "Pricing Tiers",
+    "": "No completed sales to validate"
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "Weight Assignment",
+    "": "Weights correctly distributed"
+  },
+  {
+    "🔍 MODEL VALIDATION REPORT": "Payment Dates",
+    "": "All payment dates present"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "Region": "KSA",
+    "Can_Send": "Sunday - Thursday",
+    "Can_Recieve": "N/A",
+    "Weekend": "Friday, Saturday "
+  },
+  {
+    "Region": "PK",
+    "Can_Send": "N/A",
+    "Can_Recieve": "Monday - Friday ",
+    "Weekend": "Saturday, Sunday"
+  }
+]

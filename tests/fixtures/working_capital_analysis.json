@@ -1,0 +1,426 @@
+[
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "Select Month:",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "📊 SECTION 1: CREDIT STRUCTURE SUMMARY",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "OUTFLOWS (How fast you pay):",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "  Supplier (Procurement):",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "  Slaughter:",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "  Freight:",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "  → Weighted Avg DPO:",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "INFLOWS (How fast they pay):",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "  Customer:",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "  → Average DSO:",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "💰 SECTION 2: CASH GAP ANALYSIS",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "CASH GAP:",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "Daily Outflows:",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "Capital Tied Up:",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "Status:",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "📈 SECTION 3: CREDIT GAP EVOLUTION (12 MONTHS)",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "Month",
+    "": "Status"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "01/01/2026",
+    "": "⚠️ High"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "01/02/2026",
+    "": "✓"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "01/03/2026",
+    "": "✓"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "01/04/2026",
+    "": "✓"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "01/05/2026",
+    "": "✓"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "01/06/2026",
+    "": "✓"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "01/07/2026",
+    "": "✓"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "01/08/2026",
+    "": "✓"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "01/09/2026",
+    "": "✓"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "01/10/2026",
+    "": "✅ Negative"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "01/11/2026",
+    "": "✅ Negative"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "01/12/2026",
+    "": "✅ Negative"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "🚢 SECTION 4: PER-SHIPMENT CREDIT ANALYSIS",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "Ship#",
+    "": "Flag"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "143",
+    "": "⚠️"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "145",
+    "": "⚠️"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "146",
+    "": "⚠️"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "147",
+    "": "⚠️"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "148",
+    "": "⚠️"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "149",
+    "": "⚠️"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "150",
+    "": "⚠️"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "151",
+    "": "⚠️"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "152",
+    "": "⚠️"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "153",
+    "": "⚠️"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "154",
+    "": "⚠️"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "155",
+    "": "⚠️"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "156",
+    "": "⚠️"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "157",
+    "": "⚠️"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "158",
+    "": "⚠️"
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "🎯 SECTION 5: SCENARIO PLANNER",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "⚠️ CREDIT ALERTS:",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "• Analysis complete - review sections above",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "Scenario Supplier DPO:",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "Scenario Cash Gap:",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "Scenario Capital Need:",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "Cash Gap",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "Capital Need",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "⚠️ SECTION 6: ALERTS & RECOMMENDATIONS",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "",
+    "": ""
+  },
+  {
+    "WORKING CAPITAL & CREDIT IMPACT ANALYSIS": "[Alerts will be generated based on your data]",
+    "": ""
+  }
+]

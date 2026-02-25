@@ -1,0 +1,17 @@
+[
+  {
+    "Customer ": "A",
+    "Min_Days": "0",
+    "Max_Days": "8"
+  },
+  {
+    "Customer ": "B",
+    "Min_Days": "0",
+    "Max_Days": "7"
+  },
+  {
+    "Customer ": "C",
+    "Min_Days": "0",
+    "Max_Days": "5"
+  }
+]

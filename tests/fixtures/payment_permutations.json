@@ -1,0 +1,186 @@
+[
+  {
+    "Customer": "Customer A",
+    "Payment_Days": "0",
+    "Predicted_Day": "Tuesday",
+    "Send_Day": "Tuesday",
+    "Receive_Day": "Wednesday",
+    "Total_Lead": "1"
+  },
+  {
+    "Customer": "Customer A",
+    "Payment_Days": "1",
+    "Predicted_Day": "Wednesday",
+    "Send_Day": "Wednesday",
+    "Receive_Day": "Thursday",
+    "Total_Lead": "2"
+  },
+  {
+    "Customer": "Customer A",
+    "Payment_Days": "2",
+    "Predicted_Day": "Thursday",
+    "Send_Day": "Thursday",
+    "Receive_Day": "Friday",
+    "Total_Lead": "3"
+  },
+  {
+    "Customer": "Customer A",
+    "Payment_Days": "3",
+    "Predicted_Day": "Friday",
+    "Send_Day": "Sunday",
+    "Receive_Day": "Monday",
+    "Total_Lead": "6"
+  },
+  {
+    "Customer": "Customer A",
+    "Payment_Days": "4",
+    "Predicted_Day": "Saturday",
+    "Send_Day": "Sunday",
+    "Receive_Day": "Monday",
+    "Total_Lead": "6"
+  },
+  {
+    "Customer": "Customer A",
+    "Payment_Days": "5",
+    "Predicted_Day": "Sunday",
+    "Send_Day": "Sunday",
+    "Receive_Day": "Monday",
+    "Total_Lead": "6"
+  },
+  {
+    "Customer": "Customer A",
+    "Payment_Days": "6",
+    "Predicted_Day": "Monday",
+    "Send_Day": "Monday",
+    "Receive_Day": "Tuesday",
+    "Total_Lead": "7"
+  },
+  {
+    "Customer": "Customer A",
+    "Payment_Days": "7",
+    "Predicted_Day": "Tuesday",
+    "Send_Day": "Tuesday",
+    "Receive_Day": "Wednesday",
+    "Total_Lead": "8"
+  },
+  {
+    "Customer": "Customer A",
+    "Payment_Days": "8",
+    "Predicted_Day": "Wednesday",
+    "Send_Day": "Wednesday",
+    "Receive_Day": "Thursday",
+    "Total_Lead": "9"
+  },
+  {
+    "Customer": "Customer B",
+    "Payment_Days": "0",
+    "Predicted_Day": "Tuesday",
+    "Send_Day": "Tuesday",
+    "Receive_Day": "Wednesday",
+    "Total_Lead": "1"
+  },
+  {
+    "Customer": "Customer B",
+    "Payment_Days": "1",
+    "Predicted_Day": "Wednesday",
+    "Send_Day": "Wednesday",
+    "Receive_Day": "Thursday",
+    "Total_Lead": "2"
+  },
+  {
+    "Customer": "Customer B",
+    "Payment_Days": "2",
+    "Predicted_Day": "Thursday",
+    "Send_Day": "Thursday",
+    "Receive_Day": "Friday",
+    "Total_Lead": "3"
+  },
+  {
+    "Customer": "Customer B",
+    "Payment_Days": "3",
+    "Predicted_Day": "Friday",
+    "Send_Day": "Sunday",
+    "Receive_Day": "Monday",
+    "Total_Lead": "6"
+  },
+  {
+    "Customer": "Customer B",
+    "Payment_Days": "4",
+    "Predicted_Day": "Saturday",
+    "Send_Day": "Sunday",
+    "Receive_Day": "Monday",
+    "Total_Lead": "6"
+  },
+  {
+    "Customer": "Customer B",
+    "Payment_Days": "5",
+    "Predicted_Day": "Sunday",
+    "Send_Day": "Sunday",
+    "Receive_Day": "Monday",
+    "Total_Lead": "6"
+  },
+  {
+    "Customer": "Customer B",
+    "Payment_Days": "6",
+    "Predicted_Day": "Monday",
+    "Send_Day": "Monday",
+    "Receive_Day": "Tuesday",
+    "Total_Lead": "7"
+  },
+  {
+    "Customer": "Customer B",
+    "Payment_Days": "7",
+    "Predicted_Day": "Tuesday",
+    "Send_Day": "Tuesday",
+    "Receive_Day": "Wednesday",
+    "Total_Lead": "8"
+  },
+  {
+    "Customer": "Customer C",
+    "Payment_Days": "0",
+    "Predicted_Day": "Tuesday",
+    "Send_Day": "Tuesday",
+    "Receive_Day": "Wednesday",
+    "Total_Lead": "1"
+  },
+  {
+    "Customer": "Customer C",
+    "Payment_Days": "1",
+    "Predicted_Day": "Wednesday",
+    "Send_Day": "Wednesday",
+    "Receive_Day": "Thursday",
+    "Total_Lead": "2"
+  },
+  {
+    "Customer": "Customer C",
+    "Payment_Days": "2",
+    "Predicted_Day": "Thursday",
+    "Send_Day": "Thursday",
+    "Receive_Day": "Friday",
+    "Total_Lead": "3"
+  },
+  {
+    "Customer": "Customer C",
+    "Payment_Days": "3",
+    "Predicted_Day": "Friday",
+    "Send_Day": "Sunday",
+    "Receive_Day": "Monday",
+    "Total_Lead": "6"
+  },
+  {
+    "Customer": "Customer C",
+    "Payment_Days": "4",
+    "Predicted_Day": "Saturday",
+    "Send_Day": "Sunday",
+    "Receive_Day": "Monday",
+    "Total_Lead": "6"
+  },
+  {
+    "Customer": "Customer C",
+    "Payment_Days": "5",
+    "Predicted_Day": "Sunday",
+    "Send_Day": "Sunday",
+    "Receive_Day": "Monday",
+    "Total_Lead": "6"
+  }
+]
