@@ -307,13 +307,17 @@ def create_app(workspace: AnalyticalWorkspace | None = None) -> Flask:
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    import webbrowser, threading
+    import argparse, webbrowser, threading
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--port", type=int, default=8080)
+    args = parser.parse_args()
 
     app = create_app()
 
     def open_browser():
-        webbrowser.open("http://127.0.0.1:5000")
+        webbrowser.open(f"http://127.0.0.1:{args.port}")
 
     threading.Timer(1.0, open_browser).start()
-    print("\n  SAFI Workspace UI → http://127.0.0.1:5000\n")
-    app.run(debug=False, host="0.0.0.0", port=5000)
+    print(f"\n  SAFI Workspace UI → http://127.0.0.1:{args.port}\n")
+    app.run(debug=False, host="0.0.0.0", port=args.port)
