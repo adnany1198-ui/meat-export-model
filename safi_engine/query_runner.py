@@ -9,6 +9,8 @@ so individual queries stay small and focused on *what* to ask.
 
 from __future__ import annotations
 
+from typing import Optional, Union
+
 from dataclasses import dataclass, field
 
 from safi_engine.config import ScenarioOverrides, StrategyConfig
@@ -69,7 +71,7 @@ class QueryContext:
 # ---------------------------------------------------------------------------
 
 
-def _find_cycle(ctx: QueryContext, shipment_id: int) -> ShipmentCycle | None:
+def _find_cycle(ctx: QueryContext, shipment_id: int) -> Optional[ShipmentCycle]:
     return next((c for c in ctx.cycles if c.shipment_number == shipment_id), None)
 
 
@@ -79,16 +81,16 @@ def _find_cycle(ctx: QueryContext, shipment_id: int) -> ShipmentCycle | None:
 
 # Each handler returns (result_dataclass, formatted_text)
 
-_QUERY_TYPE = (
-    RunScenarioQuery
-    | CompareScenarioQuery
-    | ExplainShipmentQuery
-    | ExplainLineItemQuery
-    | ScenarioSummaryQuery
-    | MostAffectedShipmentsQuery
-    | WorkingCapitalQuery
-    | FundingComparisonQuery
-)
+_QUERY_TYPE = Union[
+    RunScenarioQuery,
+    CompareScenarioQuery,
+    ExplainShipmentQuery,
+    ExplainLineItemQuery,
+    ScenarioSummaryQuery,
+    MostAffectedShipmentsQuery,
+    WorkingCapitalQuery,
+    FundingComparisonQuery,
+]
 
 
 def execute(query: _QUERY_TYPE, ctx: QueryContext) -> tuple:
