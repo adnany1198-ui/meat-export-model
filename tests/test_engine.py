@@ -4,7 +4,7 @@ import datetime
 import json
 from pathlib import Path
 
-from safi_engine.config import CreditDays, PricingTier, StrategyConfig
+from safi_engine.config import CreditDays, PricingTier, ScenarioOverrides, StrategyConfig
 from safi_engine.cycle import ShipmentCycle
 from safi_engine.engine import (
     CashflowEntry,
@@ -296,3 +296,200 @@ class TestProvenance:
             assert e.inputs_used, f"{e.cost_type} missing inputs_used"
             assert e.rate_used is not None, f"{e.cost_type} missing rate_used"
             assert e.timing_basis, f"{e.cost_type} missing timing_basis"
+
+
+class TestScenarioOverrides:
+    """Verify that ScenarioOverrides change outputs and are tracked in provenance."""
+
+    def test_no_overrides_matches_baseline(self):
+        """Passing overrides=None produces identical results to no-arg call."""
+        cycle = _shipment_1()
+        config = _full_strategy_config()
+        outflow_config = _load_outflow_config()
+
+        baseline = compute_full_shipment_cashflow(cycle, config, outflow_config)
+        with_none = compute_full_shipment_cashflow(cycle, config, outflow_config, overrides=None)
+
+        assert len(baseline) == len(with_none)
+        for b, w in zip(baseline, with_none):
+            assert b.amount_pkr == w.amount_pkr
+            assert b.event_date == w.event_date
+            assert b.payment_date == w.payment_date
+            assert w.overrides_applied == []
+
+    def test_empty_overrides_matches_baseline(self):
+        """ScenarioOverrides() with all-None fields produces baseline results."""
+        cycle = _shipment_1()
+        config = _full_strategy_config()
+        outflow_config = _load_outflow_config()
+
+        baseline = compute_full_shipment_cashflow(cycle, config, outflow_config)
+        with_empty = compute_full_shipment_cashflow(
+            cycle, config, outflow_config, overrides=ScenarioOverrides(),
+        )
+
+        for b, w in zip(baseline, with_empty):
+            assert b.amount_pkr == w.amount_pkr
+            assert w.overrides_applied == []
+
+    def test_fx_override_changes_sale_only(self):
+        """Overriding usd_to_pkr changes SALE amount but not outflows."""
+        cycle = _shipment_1()
+        config = _full_strategy_config()
+        outflow_config = _load_outflow_config()
+
+        baseline = compute_full_shipment_cashflow(cycle, config, outflow_config)
+        scenario = compute_full_shipment_cashflow(
+            cycle, config, outflow_config,
+            overrides=ScenarioOverrides(usd_to_pkr=300),
+        )
+
+        # Outflows should be identical (FX doesn't affect PKR outflows)
+        baseline_out = [e for e in baseline if e.direction == "outflow"]
+        scenario_out = [e for e in scenario if e.direction == "outflow"]
+        for b, s in zip(baseline_out, scenario_out):
+            assert b.amount_pkr == s.amount_pkr
+            assert s.overrides_applied == []
+
+        # SALE should differ
+        baseline_sale = next(e for e in baseline if e.cost_type == "SALE")
+        scenario_sale = next(e for e in scenario if e.cost_type == "SALE")
+
+        expected_sale = 8000 * 5.70 * 300
+        assert scenario_sale.amount_pkr == expected_sale
+        assert scenario_sale.amount_pkr != baseline_sale.amount_pkr
+        assert scenario_sale.inputs_used["usd_to_pkr"] == 300
+        assert any("usd_to_pkr: 281 -> 300" in o for o in scenario_sale.overrides_applied)
+
+    def test_sale_price_override_via_pricing_tiers(self):
+        """Overriding pricing_tiers changes the SALE price."""
+        cycle = _shipment_1()
+        config = _full_strategy_config()
+        outflow_config = _load_outflow_config()
+
+        new_tiers = [
+            PricingTier(credit_days_min=16, credit_days_max=18, price_usd_per_kg=6.00),
+        ]
+        scenario = compute_full_shipment_cashflow(
+            cycle, config, outflow_config,
+            overrides=ScenarioOverrides(pricing_tiers=new_tiers),
+        )
+
+        sale = next(e for e in scenario if e.cost_type == "SALE")
+        expected = 8000 * 6.00 * 281
+        assert sale.amount_pkr == expected
+        assert sale.rate_used == 6.00
+        assert any("pricing_tiers" in o for o in sale.overrides_applied)
+
+    def test_outflow_rate_override(self):
+        """Overriding a specific outflow rate changes that line item only."""
+        cycle = _shipment_1()
+        config = _strategy_config()
+        outflow_config = _load_outflow_config()
+
+        baseline = compute_shipment_cashflow(cycle, config, outflow_config)
+        scenario = compute_shipment_cashflow(
+            cycle, config, outflow_config,
+            overrides=ScenarioOverrides(outflow_rate_overrides={"Freight": 250}),
+        )
+
+        baseline_freight = next(e for e in baseline if e.cost_type == "Freight")
+        scenario_freight = next(e for e in scenario if e.cost_type == "Freight")
+
+        assert baseline_freight.amount_pkr == 212 * 8000
+        assert scenario_freight.amount_pkr == 250 * 8000
+        assert scenario_freight.rate_used == 250
+        assert any("rate(Freight): 212" in o for o in scenario_freight.overrides_applied)
+
+        # Other items should be unchanged
+        baseline_chilling = next(e for e in baseline if e.cost_type == "Chilling")
+        scenario_chilling = next(e for e in scenario if e.cost_type == "Chilling")
+        assert baseline_chilling.amount_pkr == scenario_chilling.amount_pkr
+        assert scenario_chilling.overrides_applied == []
+
+    def test_partha_rate_override(self):
+        """Overriding partha rates changes procurement cost."""
+        cycle = _shipment_1()
+        config = _full_strategy_config()
+        outflow_config = _load_outflow_config()
+
+        scenario = compute_full_shipment_cashflow(
+            cycle, config, outflow_config,
+            overrides=ScenarioOverrides(partha_rates={"SUPPLIER": 1200, "INTERNAL": 1000}),
+        )
+
+        partha = scenario[0]
+        assert partha.cost_type == "Partha"
+        assert partha.amount_pkr == 1200 * 8000
+        assert partha.rate_used == 1200
+        assert any("partha_rate: 1110 -> 1200" in o for o in partha.overrides_applied)
+
+    def test_credit_days_override(self):
+        """Overriding customer credit days changes SALE payment date."""
+        cycle = _shipment_1()
+        config = _full_strategy_config()
+        outflow_config = _load_outflow_config()
+
+        # Override to 12 avg days (falls in 10-12 tier -> 5.90 USD/kg)
+        new_credit = [CreditDays(month="Jan-2026", min_days=10, max_days=14, avg_days=12.0)]
+        scenario = compute_full_shipment_cashflow(
+            cycle, config, outflow_config,
+            overrides=ScenarioOverrides(customer_credit_days=new_credit),
+        )
+
+        sale = next(e for e in scenario if e.cost_type == "SALE")
+        assert (sale.payment_date - sale.event_date).days == 12
+        assert sale.rate_used == 5.90  # different tier
+        assert sale.amount_pkr == 8000 * 5.90 * 281
+        assert any("customer_credit_days" in o for o in sale.overrides_applied)
+
+    def test_proc_model_override(self):
+        """Overriding proc_model changes partha rate and is tracked."""
+        cycle = _shipment_1()  # SUPPLIER by default
+        config = _full_strategy_config()
+        outflow_config = _load_outflow_config()
+
+        scenario = compute_full_shipment_cashflow(
+            cycle, config, outflow_config,
+            overrides=ScenarioOverrides(proc_model="INTERNAL"),
+        )
+
+        partha = scenario[0]
+        assert partha.model_type == "INTERNAL"
+        assert partha.rate_used == 1000  # INTERNAL rate
+        assert partha.amount_pkr == 1000 * 8000
+        assert any("proc_model: SUPPLIER -> INTERNAL" in o for o in partha.overrides_applied)
+
+    def test_combined_overrides(self):
+        """Multiple overrides can be applied simultaneously."""
+        cycle = _shipment_1()
+        config = _full_strategy_config()
+        outflow_config = _load_outflow_config()
+
+        scenario = compute_full_shipment_cashflow(
+            cycle, config, outflow_config,
+            overrides=ScenarioOverrides(
+                usd_to_pkr=300,
+                partha_rates={"SUPPLIER": 1200, "INTERNAL": 1050},
+                outflow_rate_overrides={"Freight": 250},
+            ),
+        )
+
+        partha = scenario[0]
+        assert partha.amount_pkr == 1200 * 8000
+
+        freight = next(e for e in scenario if e.cost_type == "Freight")
+        assert freight.amount_pkr == 250 * 8000
+
+        sale = next(e for e in scenario if e.cost_type == "SALE")
+        assert sale.amount_pkr == 8000 * 5.70 * 300
+
+    def test_baseline_entries_have_empty_overrides(self):
+        """Baseline entries always have overrides_applied == []."""
+        entries = compute_full_shipment_cashflow(
+            _shipment_1(), _full_strategy_config(), _load_outflow_config(),
+        )
+        for e in entries:
+            assert e.overrides_applied == [], (
+                f"{e.cost_type} has unexpected overrides: {e.overrides_applied}"
+            )

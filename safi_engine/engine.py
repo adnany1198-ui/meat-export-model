@@ -6,7 +6,8 @@ Public API:
     compute_sale_entry()              — returns the single SALE inflow entry
 
 Each returned CashflowEntry includes structured provenance metadata
-explaining how the entry was computed.
+explaining how the entry was computed.  When ScenarioOverrides are
+provided, provenance records which values were overridden.
 """
 
 from __future__ import annotations
@@ -15,7 +16,12 @@ import datetime
 import math
 from dataclasses import dataclass, field
 
-from safi_engine.config import CreditDays, PricingTier, StrategyConfig
+from safi_engine.config import (
+    CreditDays,
+    PricingTier,
+    ScenarioOverrides,
+    StrategyConfig,
+)
 from safi_engine.cycle import ShipmentCycle
 
 
@@ -46,6 +52,10 @@ class CashflowEntry:
     timing_basis: str = ""                       # e.g. "CASH_OUT", "SLAUGHTER_END+1"
     notes: str = ""                              # optional extra context
 
+    # --- Override tracking ------------------------------------------------
+    overrides_applied: list[str] = field(default_factory=list)
+    # e.g. ["partha_rate: 1110 -> 1200", "usd_to_pkr: 281 -> 300"]
+
 
 # Backward-compatible alias — existing code that imports LedgerEntry still works.
 LedgerEntry = CashflowEntry
@@ -74,19 +84,43 @@ def compute_shipment_cashflow(
     cycle: ShipmentCycle,
     config: StrategyConfig,
     outflow_config: list[dict],
+    overrides: ScenarioOverrides | None = None,
 ) -> list[CashflowEntry]:
     """Compute all outflow entries for one shipment from first principles.
 
     Handles both SUPPLIER and INTERNAL procurement models:
       1. Partha (procurement) = partha_rate × weight_kg_net
       2. Each active PER_KG item from outflow_config × weight_kg_net
+
+    When *overrides* is provided, overridden values are used and tracked
+    in each entry's ``overrides_applied`` list.
     """
     entries: list[CashflowEntry] = []
-    model_key = cycle.proc_model.strip().upper()
+
+    # Resolve effective model (may be overridden)
+    base_model = cycle.proc_model.strip().upper()
+    model_key = base_model
+    model_overrides: list[str] = []
+    if overrides and overrides.proc_model is not None:
+        model_key = overrides.proc_model.strip().upper()
+        if model_key != base_model:
+            model_overrides.append(f"proc_model: {base_model} -> {model_key}")
+
+    # Resolve effective partha rates
+    base_partha_rates = config.partha_rates
+    eff_partha_rates = base_partha_rates
+    if overrides and overrides.partha_rates is not None:
+        eff_partha_rates = overrides.partha_rates
 
     # --- 1. Procurement (Partha) -------------------------------------------
-    partha_rate = config.partha_rates[model_key]
+    partha_rate = eff_partha_rates[model_key]
+    base_partha_rate = base_partha_rates.get(base_model)
     amount = partha_rate * cycle.weight_kg_net
+
+    partha_overrides = list(model_overrides)
+    if overrides and overrides.partha_rates is not None and partha_rate != base_partha_rate:
+        partha_overrides.append(f"partha_rate: {base_partha_rate} -> {partha_rate}")
+
     entries.append(CashflowEntry(
         shipment_id=cycle.shipment_number,
         customer_id=cycle.customer_id,
@@ -106,9 +140,12 @@ def compute_shipment_cashflow(
         rate_used=partha_rate,
         timing_basis="CASH_OUT",
         notes=f"Procurement cost for {model_key} model, paid on cash_date",
+        overrides_applied=partha_overrides,
     ))
 
     # --- 2. Per-kg outflow items from outflow_config -----------------------
+    outflow_rate_map = (overrides.outflow_rate_overrides or {}) if overrides else {}
+
     for item in outflow_config:
         # Keys in the fixture have trailing spaces — normalise once.
         code = item.get("COST_CODE", "").strip()
@@ -123,11 +160,17 @@ def compute_shipment_cashflow(
         if applies_to not in ("ALL", model_key):
             continue
 
-        rate = float(item.get("RATE_PKR ", item.get("RATE_PKR", "0")).strip())
+        base_rate = float(item.get("RATE_PKR ", item.get("RATE_PKR", "0")).strip())
         timing = item.get("TIMING_EVENT", "").strip()
         credit_days = int(
             float(item.get("DEFAULT_CREDIT_DAYS ", item.get("DEFAULT_CREDIT_DAYS", "0")).strip() or "0")
         )
+
+        # Apply per-cost-code rate override if present
+        rate = outflow_rate_map.get(code, base_rate)
+        item_overrides = list(model_overrides)
+        if code in outflow_rate_map and rate != base_rate:
+            item_overrides.append(f"rate({code}): {base_rate} -> {rate}")
 
         event_date = _resolve_event_date(timing, cycle)
         payment_date = event_date + datetime.timedelta(days=credit_days)
@@ -153,6 +196,7 @@ def compute_shipment_cashflow(
             rate_used=rate,
             timing_basis=timing.strip().upper(),
             notes=f"Applies to: {applies_to}",
+            overrides_applied=item_overrides,
         ))
 
     return entries
@@ -190,6 +234,7 @@ def _get_price_usd_per_kg(
 def compute_sale_entry(
     cycle: ShipmentCycle,
     config: StrategyConfig,
+    overrides: ScenarioOverrides | None = None,
 ) -> CashflowEntry:
     """Compute the SALE inflow entry for a shipment.
 
@@ -197,14 +242,46 @@ def compute_sale_entry(
       - credit_days = floor(avg_days) for the shipment's receive month
       - price_usd   = tier lookup using ceil(avg_days)
       - amount_pkr  = weight × price_usd × usd_to_pkr
+
+    When *overrides* is provided, overridden values are used and tracked.
     """
-    cd = _get_credit_days_for_month(cycle.receive_date, config.customer_credit_days)
-    tier = _get_price_usd_per_kg(cd.avg_days, config.pricing_tiers)
+    sale_overrides: list[str] = []
+
+    # Resolve effective model
+    base_model = cycle.proc_model.strip().upper()
+    model_key = base_model
+    if overrides and overrides.proc_model is not None:
+        model_key = overrides.proc_model.strip().upper()
+        if model_key != base_model:
+            sale_overrides.append(f"proc_model: {base_model} -> {model_key}")
+
+    # Resolve effective credit days
+    eff_credit_days_list = config.customer_credit_days
+    if overrides and overrides.customer_credit_days is not None:
+        eff_credit_days_list = overrides.customer_credit_days
+        sale_overrides.append("customer_credit_days: overridden")
+
+    cd = _get_credit_days_for_month(cycle.receive_date, eff_credit_days_list)
+
+    # Resolve effective pricing tiers
+    eff_pricing_tiers = config.pricing_tiers
+    if overrides and overrides.pricing_tiers is not None:
+        eff_pricing_tiers = overrides.pricing_tiers
+        sale_overrides.append("pricing_tiers: overridden")
+
+    tier = _get_price_usd_per_kg(cd.avg_days, eff_pricing_tiers)
+
+    # Resolve effective FX rate
+    base_fx = config.usd_to_pkr
+    eff_fx = base_fx
+    if overrides and overrides.usd_to_pkr is not None:
+        eff_fx = overrides.usd_to_pkr
+        if eff_fx != base_fx:
+            sale_overrides.append(f"usd_to_pkr: {base_fx} -> {eff_fx}")
 
     credit_days = int(cd.avg_days)  # floor for actual payment delay
     price_usd = tier.price_usd_per_kg
-    amount_pkr = cycle.weight_kg_net * price_usd * config.usd_to_pkr
-    model_key = cycle.proc_model.strip().upper()
+    amount_pkr = cycle.weight_kg_net * price_usd * eff_fx
 
     return CashflowEntry(
         shipment_id=cycle.shipment_number,
@@ -219,12 +296,12 @@ def compute_sale_entry(
         rule_name="sale_inflow",
         formula_description=(
             f"weight_kg_net × price_usd_per_kg × usd_to_pkr"
-            f" = {cycle.weight_kg_net} × {price_usd} × {config.usd_to_pkr}"
+            f" = {cycle.weight_kg_net} × {price_usd} × {eff_fx}"
         ),
         inputs_used={
             "weight_kg_net": cycle.weight_kg_net,
             "price_usd_per_kg": price_usd,
-            "usd_to_pkr": config.usd_to_pkr,
+            "usd_to_pkr": eff_fx,
             "avg_credit_days": cd.avg_days,
             "credit_days_applied": credit_days,
             "pricing_tier": f"{tier.credit_days_min}-{tier.credit_days_max}",
@@ -237,6 +314,7 @@ def compute_sale_entry(
             f"@ {price_usd} USD/kg; "
             f"credit {credit_days}d (floor of avg {cd.avg_days}d)"
         ),
+        overrides_applied=sale_overrides,
     )
 
 
@@ -249,13 +327,19 @@ def compute_full_shipment_cashflow(
     cycle: ShipmentCycle,
     config: StrategyConfig,
     outflow_config: list[dict],
+    overrides: ScenarioOverrides | None = None,
 ) -> list[CashflowEntry]:
     """Compute the complete cashflow for one shipment: outflows + SALE inflow.
 
     Returns a list of CashflowEntry objects:
       - 15 outflow entries (Partha + 14 per-kg cost items)
       - 1 SALE inflow entry
+
+    When *overrides* is provided, the overridden assumptions are applied
+    and each entry's ``overrides_applied`` list records what changed.
+    When *overrides* is None (the default), behaviour is identical to the
+    validated baseline.
     """
-    entries = compute_shipment_cashflow(cycle, config, outflow_config)
-    entries.append(compute_sale_entry(cycle, config))
+    entries = compute_shipment_cashflow(cycle, config, outflow_config, overrides)
+    entries.append(compute_sale_entry(cycle, config, overrides))
     return entries

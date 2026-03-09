@@ -46,3 +46,31 @@ class StrategyConfig:
     # Procurement cost per kg by model, from control_raw OUTFLOWS section
     # e.g. {"SUPPLIER": 1110, "INTERNAL": 1000}
     partha_rates: dict[str, float] = field(default_factory=dict)
+
+
+@dataclass
+class ScenarioOverrides:
+    """Optional overrides for running counterfactual scenarios.
+
+    Any field left as None means "use the baseline value from StrategyConfig".
+    Only non-None fields are applied, and provenance metadata records which
+    values were overridden.
+
+    Fields:
+        usd_to_pkr:              Override the FX rate
+        pricing_tiers:           Override all sale pricing tiers
+        customer_credit_days:    Override customer credit terms
+        partha_rates:            Override procurement rates by model
+        outflow_rate_overrides:  Override specific outflow rates by cost code
+                                 e.g. {"Freight": 250, "Chilling": 60}
+        proc_model:              Override the procurement model for a shipment
+                                 e.g. "INTERNAL" to simulate switching a
+                                 SUPPLIER shipment to internal procurement
+    """
+
+    usd_to_pkr: float | None = None
+    pricing_tiers: list[PricingTier] | None = None
+    customer_credit_days: list[CreditDays] | None = None
+    partha_rates: dict[str, float] | None = None
+    outflow_rate_overrides: dict[str, float] | None = None
+    proc_model: str | None = None
