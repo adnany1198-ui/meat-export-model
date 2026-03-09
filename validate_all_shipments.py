@@ -1,8 +1,7 @@
 """Validate the rules engine against every shipment in the spreadsheet.
 
-Loads cycle_detail_raw and cashflow_master fixtures, runs the engine for each
-shipment, and compares computed cashflows against the spreadsheet's expected
-output.  Produces a human-readable validation report.
+This is a thin validation layer.  All business logic lives in safi_engine/.
+This script loads fixtures, calls the engine, and compares results.
 
 Usage:
     python validate_all_shipments.py
@@ -12,14 +11,13 @@ from __future__ import annotations
 
 import datetime
 import json
-import math
 import sys
 from dataclasses import dataclass
 from pathlib import Path
 
-from safi_engine.config import StrategyConfig
+from safi_engine.config import CreditDays, PricingTier, StrategyConfig
 from safi_engine.cycle import ShipmentCycle
-from safi_engine.engine import LedgerEntry, compute_shipment_cashflow
+from safi_engine.engine import LedgerEntry, compute_full_shipment_cashflow
 
 FIXTURES = Path(__file__).resolve().parent / "tests" / "fixtures"
 
@@ -31,7 +29,6 @@ FIXTURES = Path(__file__).resolve().parent / "tests" / "fixtures"
 def load_cycle_details() -> list[ShipmentCycle]:
     """Parse cycle_detail_raw.json into a list of ShipmentCycle objects."""
     raw = json.loads((FIXTURES / "cycle_detail_raw.json").read_text())
-    headers = raw[3]  # row 3 has column headers
     cycles: list[ShipmentCycle] = []
     for row in raw[4:]:
         # Skip rows without a shipment number
@@ -74,58 +71,50 @@ def load_outflow_config() -> list[dict]:
 
 
 def load_strategy_config() -> StrategyConfig:
-    """Build StrategyConfig from strategy_control_raw.json."""
+    """Build a fully-populated StrategyConfig from strategy_control_raw.json.
+
+    Parses:
+      - USD/PKR rate (Section 2, row 26)
+      - Pricing tiers (Section 2, rows 21-24)
+      - Customer credit terms (Section 4, rows 48-59)
+      - Partha rates (hardcoded — source not yet traced to a fixture)
+    """
     raw = json.loads((FIXTURES / "strategy_control_raw.json").read_text())
+
     # USD_to_PKR is at row 26, col 1
     usd_to_pkr = float(raw[26][1])
-    # Customer credit terms: rows 48-59
-    credit_terms = _parse_credit_terms(raw, start_row=48, end_row=60)
-    # Pricing tiers: rows 21-24
-    pricing_tiers = _parse_pricing_tiers(raw, start_row=21, end_row=25)
-    return StrategyConfig(
-        usd_to_pkr=usd_to_pkr,
-        partha_rates={"SUPPLIER": 1110, "INTERNAL": 1000},
-    ), credit_terms, pricing_tiers
 
-
-# ---------------------------------------------------------------------------
-# Strategy helpers
-# ---------------------------------------------------------------------------
-
-@dataclass
-class CreditTerms:
-    """Monthly customer credit terms from strategy control."""
-    month: str
-    avg_days: float
-
-
-@dataclass
-class PricingTier:
-    """Pricing tier from strategy control."""
-    credit_days_min: int
-    credit_days_max: int
-    price_usd_per_kg: float
-
-
-def _parse_credit_terms(raw: list, start_row: int, end_row: int) -> list[CreditTerms]:
-    terms = []
-    for row in raw[start_row:end_row]:
-        if row[0] and row[3]:
-            terms.append(CreditTerms(month=row[0], avg_days=float(row[3])))
-    return terms
-
-
-def _parse_pricing_tiers(raw: list, start_row: int, end_row: int) -> list[PricingTier]:
-    tiers = []
-    for row in raw[start_row:end_row]:
+    # Pricing tiers: rows 21-24 (Section 2)
+    pricing_tiers: list[PricingTier] = []
+    for row in raw[21:25]:
         if row[0] and row[1]:
             parts = row[0].split("-")
-            tiers.append(PricingTier(
+            pricing_tiers.append(PricingTier(
                 credit_days_min=int(parts[0]),
                 credit_days_max=int(parts[1]),
                 price_usd_per_kg=float(row[1]),
             ))
-    return tiers
+
+    # Customer credit terms: rows 48-59 (Section 4)
+    customer_credit_days: list[CreditDays] = []
+    for row in raw[48:60]:
+        if row[0] and row[3]:
+            customer_credit_days.append(CreditDays(
+                month=row[0],
+                min_days=float(row[1]) if row[1] else 0.0,
+                max_days=float(row[2]) if row[2] else 0.0,
+                avg_days=float(row[3]),
+            ))
+
+    return StrategyConfig(
+        usd_to_pkr=usd_to_pkr,
+        pricing_tiers=pricing_tiers,
+        customer_credit_days=customer_credit_days,
+        # NOTE: partha rates are hardcoded here — source in spreadsheet not
+        # yet identified.  This is the SINGLE canonical location for these
+        # values.  All other code reads them from this StrategyConfig.
+        partha_rates={"SUPPLIER": 1110, "INTERNAL": 1000},
+    )
 
 
 def _parse_ddmmyyyy(s: str) -> datetime.date:
@@ -134,60 +123,6 @@ def _parse_ddmmyyyy(s: str) -> datetime.date:
         return datetime.date(1900, 1, 1)  # sentinel for missing dates
     parts = s.strip().split("/")
     return datetime.date(int(parts[2]), int(parts[1]), int(parts[0]))
-
-
-# ---------------------------------------------------------------------------
-# SALE (inflow) computation
-# ---------------------------------------------------------------------------
-
-def get_credit_days_for_month(receive_date: datetime.date,
-                              credit_terms: list[CreditTerms]) -> int:
-    """Look up the floor of avg credit days for the month of receive_date."""
-    month_str = receive_date.strftime("%b-%Y")  # e.g. "Jan-2026"
-    for ct in credit_terms:
-        if ct.month == month_str:
-            return int(ct.avg_days)  # floor
-    raise ValueError(f"No credit terms for month {month_str}")
-
-
-def get_price_usd_per_kg(avg_days: float,
-                         pricing_tiers: list[PricingTier]) -> float:
-    """Look up USD/kg price using ceil of avg_days against pricing tiers."""
-    lookup_days = math.ceil(avg_days)
-    for tier in pricing_tiers:
-        if tier.credit_days_min <= lookup_days <= tier.credit_days_max:
-            return tier.price_usd_per_kg
-    raise ValueError(f"No pricing tier for {lookup_days} credit days (avg={avg_days})")
-
-
-def compute_sale_entry(cycle: ShipmentCycle,
-                       config: StrategyConfig,
-                       credit_terms: list[CreditTerms],
-                       pricing_tiers: list[PricingTier]) -> LedgerEntry:
-    """Compute the SALE inflow entry for a shipment."""
-    month_str = cycle.receive_date.strftime("%b-%Y")
-    avg_days = None
-    for ct in credit_terms:
-        if ct.month == month_str:
-            avg_days = ct.avg_days
-            break
-    if avg_days is None:
-        raise ValueError(f"No credit terms for {month_str}")
-
-    credit_days = int(avg_days)  # floor for actual payment delay
-    price_usd = get_price_usd_per_kg(avg_days, pricing_tiers)
-    amount_pkr = cycle.weight_kg_net * price_usd * config.usd_to_pkr
-
-    return LedgerEntry(
-        shipment_id=cycle.shipment_number,
-        customer_id=cycle.customer_id,
-        cost_type="SALE",
-        direction="inflow",
-        amount_pkr=amount_pkr,
-        event_date=cycle.receive_date,
-        payment_date=cycle.receive_date + datetime.timedelta(days=credit_days),
-        source_assumption=f"price={price_usd}USD/kg, credit={credit_days}d",
-    )
 
 
 # ---------------------------------------------------------------------------
@@ -250,9 +185,7 @@ def compare_shipment(
 
         # Map the spreadsheet item name to our engine's cost_type
         engine_item = item
-        if item == "PROCUREMENT_SUPPLIER":
-            engine_item = "Partha"
-        elif item == "PROCUREMENT_INTERNAL":
+        if item in ("PROCUREMENT_SUPPLIER", "PROCUREMENT_INTERNAL"):
             engine_item = "Partha"
 
         key = (engine_item, direction)
@@ -320,7 +253,7 @@ def validate_all() -> list[ShipmentResult]:
     cycles = load_cycle_details()
     expected = load_expected_cashflows()
     outflow_config = load_outflow_config()
-    strategy_config, credit_terms, pricing_tiers = load_strategy_config()
+    config = load_strategy_config()
 
     results: list[ShipmentResult] = []
 
@@ -340,18 +273,9 @@ def validate_all() -> list[ShipmentResult]:
             continue
 
         try:
-            # Compute outflows
-            outflow_entries = compute_shipment_cashflow(
-                cycle, strategy_config, outflow_config,
+            all_entries = compute_full_shipment_cashflow(
+                cycle, config, outflow_config,
             )
-
-            # Compute SALE inflow
-            sale_entry = compute_sale_entry(
-                cycle, strategy_config, credit_terms, pricing_tiers,
-            )
-
-            all_entries = outflow_entries + [sale_entry]
-
             result = compare_shipment(cycle, expected[ship_num], all_entries)
             results.append(result)
 

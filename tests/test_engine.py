@@ -4,9 +4,13 @@ import datetime
 import json
 from pathlib import Path
 
-from safi_engine.config import StrategyConfig
+from safi_engine.config import CreditDays, PricingTier, StrategyConfig
 from safi_engine.cycle import ShipmentCycle
-from safi_engine.engine import compute_shipment_cashflow
+from safi_engine.engine import (
+    compute_full_shipment_cashflow,
+    compute_sale_entry,
+    compute_shipment_cashflow,
+)
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -32,9 +36,34 @@ def _shipment_1() -> ShipmentCycle:
 
 
 def _strategy_config() -> StrategyConfig:
+    """Minimal StrategyConfig for outflow-only tests.
+
+    Uses the canonical partha rates.  Does not populate pricing_tiers or
+    customer_credit_days (not needed for outflow computation).
+    """
     return StrategyConfig(
         usd_to_pkr=281,
         partha_rates={"SUPPLIER": 1110, "INTERNAL": 1000},
+    )
+
+
+def _full_strategy_config() -> StrategyConfig:
+    """Fully-populated StrategyConfig for full cashflow tests.
+
+    Values match strategy_control_raw.json January row.
+    """
+    return StrategyConfig(
+        usd_to_pkr=281,
+        partha_rates={"SUPPLIER": 1110, "INTERNAL": 1000},
+        pricing_tiers=[
+            PricingTier(credit_days_min=10, credit_days_max=12, price_usd_per_kg=5.90),
+            PricingTier(credit_days_min=13, credit_days_max=15, price_usd_per_kg=5.80),
+            PricingTier(credit_days_min=16, credit_days_max=18, price_usd_per_kg=5.70),
+            PricingTier(credit_days_min=19, credit_days_max=20, price_usd_per_kg=5.65),
+        ],
+        customer_credit_days=[
+            CreditDays(month="Jan-2026", min_days=15.0, max_days=20.0, avg_days=17.5),
+        ],
     )
 
 
@@ -107,3 +136,64 @@ class TestShipment1Outflow:
         assert by_type["Freight"].amount_pkr == 212 * 8000  # 1,696,000
         assert by_type["Chilling"].amount_pkr == 55 * 8000  # 440,000
         assert by_type["Animal_Trimming"].amount_pkr == 38.5 * 8000  # 308,000
+
+
+class TestFullShipmentCashflow:
+    """Tests for compute_full_shipment_cashflow — the unified entry point."""
+
+    def test_returns_16_entries(self):
+        """15 outflows + 1 SALE inflow = 16 entries."""
+        entries = compute_full_shipment_cashflow(
+            _shipment_1(), _full_strategy_config(), _load_outflow_config(),
+        )
+        assert len(entries) == 16
+
+    def test_has_one_inflow(self):
+        entries = compute_full_shipment_cashflow(
+            _shipment_1(), _full_strategy_config(), _load_outflow_config(),
+        )
+        inflows = [e for e in entries if e.direction == "inflow"]
+        assert len(inflows) == 1
+        assert inflows[0].cost_type == "SALE"
+
+    def test_outflows_unchanged(self):
+        """Full cashflow outflows match outflow-only computation."""
+        outflow_only = compute_shipment_cashflow(
+            _shipment_1(), _strategy_config(), _load_outflow_config(),
+        )
+        full = compute_full_shipment_cashflow(
+            _shipment_1(), _full_strategy_config(), _load_outflow_config(),
+        )
+        full_outflows = [e for e in full if e.direction == "outflow"]
+        assert len(full_outflows) == len(outflow_only)
+        for a, b in zip(outflow_only, full_outflows):
+            assert a.cost_type == b.cost_type
+            assert a.amount_pkr == b.amount_pkr
+            assert a.event_date == b.event_date
+
+    def test_sale_amount_matches_spreadsheet(self):
+        """SALE for shipment 1 = 12,813,600 PKR (8000 kg × 5.70 USD/kg × 281)."""
+        entries = compute_full_shipment_cashflow(
+            _shipment_1(), _full_strategy_config(), _load_outflow_config(),
+        )
+        sale = next(e for e in entries if e.cost_type == "SALE")
+        assert sale.amount_pkr == 8000 * 5.70 * 281  # 12,813,600
+
+    def test_sale_credit_days(self):
+        """Jan avg_days=17.5 → floor=17 → payment 17 days after receive."""
+        entries = compute_full_shipment_cashflow(
+            _shipment_1(), _full_strategy_config(), _load_outflow_config(),
+        )
+        sale = next(e for e in entries if e.cost_type == "SALE")
+        assert sale.event_date == datetime.date(2026, 1, 15)
+        assert sale.payment_date == datetime.date(2026, 2, 1)
+        assert (sale.payment_date - sale.event_date).days == 17
+
+    def test_sale_source_assumption_is_explicit(self):
+        """The source_assumption should record the price and credit days used."""
+        entries = compute_full_shipment_cashflow(
+            _shipment_1(), _full_strategy_config(), _load_outflow_config(),
+        )
+        sale = next(e for e in entries if e.cost_type == "SALE")
+        assert "5.7" in sale.source_assumption
+        assert "17" in sale.source_assumption

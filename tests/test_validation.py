@@ -11,11 +11,13 @@ from validate_all_shipments import (
     load_expected_cashflows,
     load_outflow_config,
     load_strategy_config,
-    compute_sale_entry,
-    compare_shipment,
     validate_all,
 )
-from safi_engine.engine import compute_shipment_cashflow
+from safi_engine.engine import (
+    compute_full_shipment_cashflow,
+    compute_sale_entry,
+    compute_shipment_cashflow,
+)
 
 
 # Run validation once and share across tests
@@ -61,14 +63,14 @@ class TestMultiShipmentOutflows:
     def engine_inputs(self):
         cycles = load_cycle_details()
         outflow_config = load_outflow_config()
-        strategy_config, credit_terms, pricing_tiers = load_strategy_config()
+        config = load_strategy_config()
         cycle_by_num = {c.shipment_number: c for c in cycles}
-        return cycle_by_num, strategy_config, outflow_config
+        return cycle_by_num, config, outflow_config
 
     def _compute(self, engine_inputs, ship_num):
-        cycle_by_num, strategy_config, outflow_config = engine_inputs
+        cycle_by_num, config, outflow_config = engine_inputs
         cycle = cycle_by_num[ship_num]
-        return compute_shipment_cashflow(cycle, strategy_config, outflow_config)
+        return compute_shipment_cashflow(cycle, config, outflow_config)
 
     def test_shipment_2_supplier_b(self, engine_inputs):
         """Shipment 2: Customer B, SUPPLIER, 4800 kg."""
@@ -101,41 +103,37 @@ class TestSaleInflows:
     @pytest.fixture(scope="class")
     def sale_inputs(self):
         cycles = load_cycle_details()
-        strategy_config, credit_terms, pricing_tiers = load_strategy_config()
+        config = load_strategy_config()
         expected = load_expected_cashflows()
         cycle_by_num = {c.shipment_number: c for c in cycles}
-        return cycle_by_num, strategy_config, credit_terms, pricing_tiers, expected
-
-    def _get_expected_sale(self, expected, ship_num):
-        rows = expected[ship_num]
-        return next(r for r in rows if r["Item"] == "SALE")
+        return cycle_by_num, config, expected
 
     def test_jan_sale_price_5_70(self, sale_inputs):
         """Jan shipments use 5.70 USD/kg (17 credit days -> 16-18 tier)."""
-        cycle_by_num, config, ct, pt, expected = sale_inputs
-        entry = compute_sale_entry(cycle_by_num[1], config, ct, pt)
+        cycle_by_num, config, expected = sale_inputs
+        entry = compute_sale_entry(cycle_by_num[1], config)
         usd_per_kg = entry.amount_pkr / 8000 / 281
         assert abs(usd_per_kg - 5.70) < 0.001
 
     def test_apr_sale_price_5_80(self, sale_inputs):
         """Apr shipments use 5.80 USD/kg (15 credit days -> 13-15 tier)."""
-        cycle_by_num, config, ct, pt, expected = sale_inputs
-        entry = compute_sale_entry(cycle_by_num[42], config, ct, pt)
+        cycle_by_num, config, expected = sale_inputs
+        entry = compute_sale_entry(cycle_by_num[42], config)
         usd_per_kg = entry.amount_pkr / cycle_by_num[42].weight_kg_net / 281
         assert abs(usd_per_kg - 5.80) < 0.001
 
     def test_sep_sale_price_5_90(self, sale_inputs):
         """Sep shipments use 5.90 USD/kg (12 credit days -> 10-12 tier)."""
-        cycle_by_num, config, ct, pt, expected = sale_inputs
-        entry = compute_sale_entry(cycle_by_num[156], config, ct, pt)
+        cycle_by_num, config, expected = sale_inputs
+        entry = compute_sale_entry(cycle_by_num[156], config)
         usd_per_kg = entry.amount_pkr / cycle_by_num[156].weight_kg_net / 281
         assert abs(usd_per_kg - 5.90) < 0.001
 
     def test_sale_credit_days_vary_by_month(self, sale_inputs):
         """Credit days should differ between Jan (17d) and Oct (11d)."""
-        cycle_by_num, config, ct, pt, expected = sale_inputs
-        jan_entry = compute_sale_entry(cycle_by_num[1], config, ct, pt)
-        oct_entry = compute_sale_entry(cycle_by_num[170], config, ct, pt)
+        cycle_by_num, config, expected = sale_inputs
+        jan_entry = compute_sale_entry(cycle_by_num[1], config)
+        oct_entry = compute_sale_entry(cycle_by_num[170], config)
         jan_credit = (jan_entry.payment_date - jan_entry.event_date).days
         oct_credit = (oct_entry.payment_date - oct_entry.event_date).days
         assert jan_credit == 17
