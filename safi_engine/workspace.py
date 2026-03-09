@@ -1,19 +1,23 @@
-"""Persistent analytical workspace with named scenario management.
+"""Persistent analytical workspace with named scenario and report management.
 
-The AnalyticalWorkspace holds baseline context (cycles, config, outflow_config)
-and a dictionary of named scenarios.  Its execute() method resolves scenario
-names to ScenarioOverrides, then delegates analytical queries to query_runner.
-
-Lifecycle operations (save/list/delete/rename) are handled directly.
+The AnalyticalWorkspace holds baseline context (cycles, config, outflow_config),
+a dictionary of named scenarios, and a dictionary of saved reports (analysis
+artifacts).  Its execute() method resolves scenario names to ScenarioOverrides,
+dispatches queries, and handles report lifecycle operations.
 
 Public API:
     AnalyticalWorkspace(ctx)       — create workspace from a QueryContext
     workspace.execute(query)       — dispatch any query (lifecycle or analytical)
-    workspace.save_scenario(...)   — imperative save
-    workspace.get_scenario(...)    — imperative retrieve
-    workspace.list_scenarios()     — imperative list
-    workspace.delete_scenario(...) — imperative delete
-    workspace.rename_scenario(...) — imperative rename
+    workspace.save_scenario(...)   — imperative save scenario
+    workspace.get_scenario(...)    — imperative retrieve scenario
+    workspace.list_scenarios()     — imperative list scenarios
+    workspace.delete_scenario(...) — imperative delete scenario
+    workspace.rename_scenario(...) — imperative rename scenario
+    workspace.save_report(...)     — imperative save report
+    workspace.get_report(...)      — imperative retrieve report
+    workspace.list_reports()       — imperative list reports
+    workspace.delete_report(...)   — imperative delete report
+    workspace.rename_report(...)   — imperative rename report
 
 Dataclasses:
     NamedScenario                  — scenario with name, overrides, metadata
@@ -33,18 +37,37 @@ from safi_engine.config import ScenarioOverrides
 from safi_engine.query_model import (
     CompareNamedScenariosQuery,
     CompareScenarioQuery,
+    DeleteReportQuery,
     DeleteScenarioQuery,
     ExplainLineItemQuery,
     ExplainShipmentQuery,
     FundingComparisonQuery,
+    GetReportQuery,
+    ListReportsQuery,
     ListScenariosQuery,
     MostAffectedShipmentsQuery,
     QueryType,
+    RenameReportQuery,
     RenameScenarioQuery,
     RunScenarioQuery,
+    SaveReportQuery,
     SaveScenarioQuery,
     ScenarioSummaryQuery,
     WorkingCapitalQuery,
+)
+from safi_engine.workspace_reports import (
+    DeleteReportResult,
+    GetReportResult,
+    ListReportsResult,
+    RenameReportResult,
+    SavedReport,
+    SaveReportResult,
+    classify_report,
+    format_delete_report,
+    format_get_report,
+    format_rename_report,
+    format_report_list,
+    format_save_report,
 )
 from safi_engine.query_runner import QueryContext, execute as _execute_query
 from safi_engine.scenario_analysis import (
@@ -127,6 +150,7 @@ class AnalyticalWorkspace:
     def __init__(self, ctx: QueryContext) -> None:
         self.ctx = ctx
         self._scenarios: dict[str, NamedScenario] = {}
+        self._reports: dict[str, SavedReport] = {}
 
     # -- Imperative scenario management ------------------------------------
 
@@ -178,6 +202,60 @@ class AnalyticalWorkspace:
     def scenario_count(self) -> int:
         return len(self._scenarios)
 
+    # -- Imperative report management --------------------------------------
+
+    def save_report(
+        self,
+        name: str,
+        source_query: object,
+        result: object,
+        formatted_text: str,
+        description: str = "",
+        notes: str = "",
+    ) -> SaveReportResult:
+        """Save or update a named report artifact."""
+        created = name not in self._reports
+        rpt = SavedReport(
+            name=name,
+            report_type=classify_report(source_query),
+            source_query=source_query,
+            result=result,
+            formatted_text=formatted_text,
+            description=description,
+            notes=notes,
+        )
+        self._reports[name] = rpt
+        return SaveReportResult(name=name, created=created, report=rpt)
+
+    def get_report(self, name: str) -> GetReportResult:
+        """Retrieve a saved report by name."""
+        rpt = self._reports.get(name)
+        return GetReportResult(name=name, found=rpt is not None, report=rpt)
+
+    def list_reports(self) -> list[SavedReport]:
+        """Return all saved reports in insertion order."""
+        return list(self._reports.values())
+
+    def delete_report(self, name: str) -> DeleteReportResult:
+        """Delete a saved report. Returns whether it existed."""
+        deleted = name in self._reports
+        self._reports.pop(name, None)
+        return DeleteReportResult(name=name, deleted=deleted)
+
+    def rename_report(self, old_name: str, new_name: str) -> RenameReportResult:
+        """Rename a report. Fails if old doesn't exist or new conflicts."""
+        if old_name not in self._reports:
+            return RenameReportResult(old_name=old_name, new_name=new_name, renamed=False)
+        if new_name in self._reports:
+            return RenameReportResult(old_name=old_name, new_name=new_name, renamed=False)
+        rpt = self._reports.pop(old_name)
+        rpt.name = new_name
+        self._reports[new_name] = rpt
+        return RenameReportResult(old_name=old_name, new_name=new_name, renamed=True)
+
+    def report_count(self) -> int:
+        return len(self._reports)
+
     # -- Resolve scenario name → overrides ---------------------------------
 
     def _resolve_overrides(
@@ -207,7 +285,7 @@ class AnalyticalWorkspace:
 
         Returns (result, formatted_text).
         """
-        # Lifecycle queries — handled directly
+        # Scenario lifecycle queries
         if isinstance(query, SaveScenarioQuery):
             return self._handle_save(query)
         if isinstance(query, ListScenariosQuery):
@@ -218,6 +296,18 @@ class AnalyticalWorkspace:
             return self._handle_rename(query)
         if isinstance(query, CompareNamedScenariosQuery):
             return self._handle_compare_named(query)
+
+        # Report lifecycle queries
+        if isinstance(query, SaveReportQuery):
+            return self._handle_save_report(query)
+        if isinstance(query, ListReportsQuery):
+            return self._handle_list_reports(query)
+        if isinstance(query, GetReportQuery):
+            return self._handle_get_report(query)
+        if isinstance(query, DeleteReportQuery):
+            return self._handle_delete_report(query)
+        if isinstance(query, RenameReportQuery):
+            return self._handle_rename_report(query)
 
         # Analytical queries — resolve scenario_name, then delegate
         resolved_query = self._resolve_query(query)
@@ -251,6 +341,52 @@ class AnalyticalWorkspace:
         result = self.rename_scenario(query.old_name, query.new_name)
         text = _format_rename(result)
         return result, text
+
+    # -- Report lifecycle handlers -------------------------------------------
+
+    def _handle_save_report(
+        self, query: SaveReportQuery,
+    ) -> tuple[SaveReportResult, str]:
+        # If source_query is provided, execute it first to get result + text
+        if query.source_query is not None and query.result is None:
+            result, text = self.execute(query.source_query)
+            save_result = self.save_report(
+                query.name, query.source_query, result, text,
+                query.description, query.notes,
+            )
+        else:
+            save_result = self.save_report(
+                query.name, query.source_query, query.result,
+                query.formatted_text, query.description, query.notes,
+            )
+        return save_result, format_save_report(save_result)
+
+    def _handle_list_reports(
+        self, query: ListReportsQuery,
+    ) -> tuple[ListReportsResult, str]:
+        reports = self.list_reports()
+        result = ListReportsResult(reports=reports)
+        return result, format_report_list(result)
+
+    def _handle_get_report(
+        self, query: GetReportQuery,
+    ) -> tuple[GetReportResult, str]:
+        result = self.get_report(query.name)
+        return result, format_get_report(result)
+
+    def _handle_delete_report(
+        self, query: DeleteReportQuery,
+    ) -> tuple[DeleteReportResult, str]:
+        result = self.delete_report(query.name)
+        return result, format_delete_report(result)
+
+    def _handle_rename_report(
+        self, query: RenameReportQuery,
+    ) -> tuple[RenameReportResult, str]:
+        result = self.rename_report(query.old_name, query.new_name)
+        return result, format_rename_report(result)
+
+    # -- Named scenario comparison handler ---------------------------------
 
     def _handle_compare_named(
         self, query: CompareNamedScenariosQuery,

@@ -77,6 +77,12 @@ class QueryType(Enum):
     DELETE_SCENARIO = auto()
     RENAME_SCENARIO = auto()
     COMPARE_NAMED = auto()
+    # Report lifecycle
+    SAVE_REPORT = auto()
+    LIST_REPORTS = auto()
+    GET_REPORT = auto()
+    DELETE_REPORT = auto()
+    RENAME_REPORT = auto()
 
 
 # ---------------------------------------------------------------------------
@@ -217,6 +223,60 @@ class CompareNamedScenariosQuery:
     scenario_b: str = ""
     mode: str = "cashflow"  # "cashflow" or "funding"
     shipment_id: int | None = None  # for funding mode
+
+
+# ---------------------------------------------------------------------------
+# Report lifecycle query dataclasses
+# ---------------------------------------------------------------------------
+
+
+@dataclass
+class SaveReportQuery:
+    """Save a query result as a named report.
+
+    Provide EITHER source_query (to execute and save) OR
+    pre-computed result + formatted_text (to save directly).
+    """
+
+    query_type: QueryType = field(default=QueryType.SAVE_REPORT, init=False)
+    name: str = ""
+    source_query: object = None     # query to execute and save
+    result: object = None           # pre-computed result (skip execution)
+    formatted_text: str = ""        # pre-computed text (skip execution)
+    description: str = ""
+    notes: str = ""
+
+
+@dataclass
+class ListReportsQuery:
+    """List all saved reports."""
+
+    query_type: QueryType = field(default=QueryType.LIST_REPORTS, init=False)
+
+
+@dataclass
+class GetReportQuery:
+    """Retrieve a saved report by name."""
+
+    query_type: QueryType = field(default=QueryType.GET_REPORT, init=False)
+    name: str = ""
+
+
+@dataclass
+class DeleteReportQuery:
+    """Delete a saved report."""
+
+    query_type: QueryType = field(default=QueryType.DELETE_REPORT, init=False)
+    name: str = ""
+
+
+@dataclass
+class RenameReportQuery:
+    """Rename a saved report."""
+
+    query_type: QueryType = field(default=QueryType.RENAME_REPORT, init=False)
+    old_name: str = ""
+    new_name: str = ""
 
 
 # ---------------------------------------------------------------------------
