@@ -37,14 +37,17 @@ from safi_engine.config import ScenarioOverrides
 from safi_engine.query_model import (
     CompareNamedScenariosQuery,
     CompareScenarioQuery,
+    CreateScenarioFromTemplateQuery,
     DeleteReportQuery,
     DeleteScenarioQuery,
     ExplainLineItemQuery,
     ExplainShipmentQuery,
     FundingComparisonQuery,
     GetReportQuery,
+    InspectScenarioTemplateQuery,
     ListReportsQuery,
     ListScenariosQuery,
+    ListScenarioTemplatesQuery,
     MostAffectedShipmentsQuery,
     QueryType,
     RenameReportQuery,
@@ -54,6 +57,16 @@ from safi_engine.query_model import (
     SaveScenarioQuery,
     ScenarioSummaryQuery,
     WorkingCapitalQuery,
+)
+from safi_engine.scenario_templates import (
+    CreateScenarioFromTemplateResult,
+    InspectTemplateResult,
+    ListTemplatesResult,
+    TemplateLibrary,
+    default_library,
+    format_create_from_template,
+    format_inspect_template,
+    format_template_list,
 )
 from safi_engine.workspace_reports import (
     DeleteReportResult,
@@ -147,10 +160,11 @@ class AnalyticalWorkspace:
 
     BASELINE = "baseline"
 
-    def __init__(self, ctx: QueryContext) -> None:
+    def __init__(self, ctx: QueryContext, template_library: TemplateLibrary | None = None) -> None:
         self.ctx = ctx
         self._scenarios: dict[str, NamedScenario] = {}
         self._reports: dict[str, SavedReport] = {}
+        self.templates: TemplateLibrary = template_library or default_library()
 
     # -- Imperative scenario management ------------------------------------
 
@@ -309,6 +323,14 @@ class AnalyticalWorkspace:
         if isinstance(query, RenameReportQuery):
             return self._handle_rename_report(query)
 
+        # Template lifecycle queries
+        if isinstance(query, ListScenarioTemplatesQuery):
+            return self._handle_list_templates(query)
+        if isinstance(query, InspectScenarioTemplateQuery):
+            return self._handle_inspect_template(query)
+        if isinstance(query, CreateScenarioFromTemplateQuery):
+            return self._handle_create_from_template(query)
+
         # Analytical queries — resolve scenario_name, then delegate
         resolved_query = self._resolve_query(query)
         return _execute_query(resolved_query, self.ctx)
@@ -385,6 +407,57 @@ class AnalyticalWorkspace:
     ) -> tuple[RenameReportResult, str]:
         result = self.rename_report(query.old_name, query.new_name)
         return result, format_rename_report(result)
+
+    # -- Template lifecycle handlers ----------------------------------------
+
+    def _handle_list_templates(
+        self, query: ListScenarioTemplatesQuery,
+    ) -> tuple[ListTemplatesResult, str]:
+        result = ListTemplatesResult(templates=self.templates.list_templates())
+        return result, format_template_list(result)
+
+    def _handle_inspect_template(
+        self, query: InspectScenarioTemplateQuery,
+    ) -> tuple[InspectTemplateResult, str]:
+        t = self.templates.get(query.name)
+        result = InspectTemplateResult(name=query.name, found=t is not None, template=t)
+        return result, format_inspect_template(result)
+
+    def _handle_create_from_template(
+        self, query: CreateScenarioFromTemplateQuery,
+    ) -> tuple[CreateScenarioFromTemplateResult, str]:
+        t = self.templates.get(query.template_name)
+        if t is None:
+            result = CreateScenarioFromTemplateResult(
+                template_name=query.template_name,
+                scenario_name=query.scenario_name,
+                created=False,
+                message=f"Template '{query.template_name}' not found.",
+            )
+            return result, format_create_from_template(result)
+
+        overrides = t.merged_overrides
+        try:
+            self.save_scenario(
+                query.scenario_name, overrides,
+                description=query.description or f"From template '{t.name}': {t.description}",
+                notes=query.notes,
+            )
+        except ValueError as e:
+            result = CreateScenarioFromTemplateResult(
+                template_name=query.template_name,
+                scenario_name=query.scenario_name,
+                created=False,
+                message=str(e),
+            )
+            return result, format_create_from_template(result)
+
+        result = CreateScenarioFromTemplateResult(
+            template_name=query.template_name,
+            scenario_name=query.scenario_name,
+            created=True,
+        )
+        return result, format_create_from_template(result)
 
     # -- Named scenario comparison handler ---------------------------------
 

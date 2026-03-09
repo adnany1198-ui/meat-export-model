@@ -83,6 +83,10 @@ class QueryType(Enum):
     GET_REPORT = auto()
     DELETE_REPORT = auto()
     RENAME_REPORT = auto()
+    # Template lifecycle
+    LIST_TEMPLATES = auto()
+    INSPECT_TEMPLATE = auto()
+    CREATE_FROM_TEMPLATE = auto()
 
 
 # ---------------------------------------------------------------------------
@@ -277,6 +281,40 @@ class RenameReportQuery:
     query_type: QueryType = field(default=QueryType.RENAME_REPORT, init=False)
     old_name: str = ""
     new_name: str = ""
+
+
+# ---------------------------------------------------------------------------
+# Template lifecycle query dataclasses
+# ---------------------------------------------------------------------------
+
+
+@dataclass
+class ListScenarioTemplatesQuery:
+    """List all available scenario templates."""
+
+    query_type: QueryType = field(default=QueryType.LIST_TEMPLATES, init=False)
+
+
+@dataclass
+class InspectScenarioTemplateQuery:
+    """Inspect a scenario template by name."""
+
+    query_type: QueryType = field(default=QueryType.INSPECT_TEMPLATE, init=False)
+    name: str = ""
+
+
+@dataclass
+class CreateScenarioFromTemplateQuery:
+    """Create a named scenario from a template.
+
+    Optionally provide extra_overrides to layer on top of the template.
+    """
+
+    query_type: QueryType = field(default=QueryType.CREATE_FROM_TEMPLATE, init=False)
+    template_name: str = ""
+    scenario_name: str = ""
+    description: str = ""
+    notes: str = ""
 
 
 # ---------------------------------------------------------------------------
