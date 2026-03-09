@@ -17,7 +17,7 @@ from pathlib import Path
 
 from safi_engine.config import CreditDays, PricingTier, StrategyConfig
 from safi_engine.cycle import ShipmentCycle
-from safi_engine.engine import LedgerEntry, compute_full_shipment_cashflow
+from safi_engine.engine import CashflowEntry, compute_full_shipment_cashflow
 
 FIXTURES = Path(__file__).resolve().parent / "tests" / "fixtures"
 
@@ -144,6 +144,7 @@ class RowComparison:
     computed_pay_date: datetime.date | None
     pay_date_match: bool
     status: str  # "MATCH", "AMOUNT_DIFF", "DATE_DIFF", "MISSING"
+    provenance: CashflowEntry | None = None  # the computed entry, for explanation
 
 
 @dataclass
@@ -162,13 +163,13 @@ class ShipmentResult:
 def compare_shipment(
     cycle: ShipmentCycle,
     expected_rows: list[dict],
-    computed_entries: list[LedgerEntry],
+    computed_entries: list[CashflowEntry],
 ) -> ShipmentResult:
     """Compare expected cashflow rows against computed entries."""
     comparisons: list[RowComparison] = []
 
     # Build lookup of computed entries by (item, direction)
-    computed_by_key: dict[tuple[str, str], LedgerEntry] = {}
+    computed_by_key: dict[tuple[str, str], CashflowEntry] = {}
     for entry in computed_entries:
         # Normalise direction to match fixture format
         direction = "OUT" if entry.direction == "outflow" else "IN"
@@ -201,6 +202,7 @@ def compare_shipment(
                 expected_pay_date=expected_pay_date, computed_pay_date=None,
                 pay_date_match=False,
                 status="MISSING",
+                provenance=None,
             ))
             all_passed = False
             continue
@@ -231,6 +233,7 @@ def compare_shipment(
             computed_pay_date=entry.payment_date,
             pay_date_match=pay_date_match,
             status=status,
+            provenance=entry,
         ))
 
     return ShipmentResult(
@@ -355,6 +358,15 @@ def format_report(results: list[ShipmentResult]) -> str:
                     if not c.pay_date_match:
                         lines.append(f"      Payment date: expected {c.expected_pay_date}, "
                                      f"got {c.computed_pay_date}")
+                # Print provenance for any mismatch
+                if c.provenance is not None:
+                    lines.append(f"      --- Provenance ---")
+                    lines.append(f"      Rule:    {c.provenance.rule_name}")
+                    lines.append(f"      Formula: {c.provenance.formula_description}")
+                    lines.append(f"      Inputs:  {c.provenance.inputs_used}")
+                    lines.append(f"      Timing:  {c.provenance.timing_basis}")
+                    if c.provenance.notes:
+                        lines.append(f"      Notes:   {c.provenance.notes}")
 
     # Passed shipments (brief)
     passed_results = [r for r in results if r.passed]

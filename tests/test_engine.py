@@ -7,6 +7,7 @@ from pathlib import Path
 from safi_engine.config import CreditDays, PricingTier, StrategyConfig
 from safi_engine.cycle import ShipmentCycle
 from safi_engine.engine import (
+    CashflowEntry,
     compute_full_shipment_cashflow,
     compute_sale_entry,
     compute_shipment_cashflow,
@@ -197,3 +198,101 @@ class TestFullShipmentCashflow:
         sale = next(e for e in entries if e.cost_type == "SALE")
         assert "5.7" in sale.source_assumption
         assert "17" in sale.source_assumption
+
+
+class TestProvenance:
+    """Verify structured provenance metadata on CashflowEntry objects."""
+
+    def test_all_entries_are_cashflow_entries(self):
+        entries = compute_full_shipment_cashflow(
+            _shipment_1(), _full_strategy_config(), _load_outflow_config(),
+        )
+        for e in entries:
+            assert isinstance(e, CashflowEntry)
+
+    def test_supplier_outflow_partha_provenance(self):
+        """Partha entry for SUPPLIER model has correct provenance."""
+        entries = compute_shipment_cashflow(
+            _shipment_1(), _strategy_config(), _load_outflow_config(),
+        )
+        partha = entries[0]
+        assert partha.model_type == "SUPPLIER"
+        assert partha.rule_name == "partha_procurement"
+        assert partha.rate_used == 1110
+        assert partha.timing_basis == "CASH_OUT"
+        assert partha.inputs_used["partha_rate"] == 1110
+        assert partha.inputs_used["weight_kg_net"] == 8000.0
+        assert "partha_rate" in partha.formula_description
+        assert "weight_kg_net" in partha.formula_description
+
+    def test_supplier_outflow_per_kg_provenance(self):
+        """Per-kg outflow items have correct provenance metadata."""
+        entries = compute_shipment_cashflow(
+            _shipment_1(), _strategy_config(), _load_outflow_config(),
+        )
+        freight = next(e for e in entries if e.cost_type == "Freight")
+        assert freight.model_type == "SUPPLIER"
+        assert freight.rule_name == "per_kg_outflow"
+        assert freight.rate_used == 212
+        assert freight.timing_basis == "SLAUGHTER_END"
+        assert freight.inputs_used["rate_pkr_per_kg"] == 212
+        assert freight.inputs_used["weight_kg_net"] == 8000.0
+        assert "credit_days" in freight.inputs_used
+
+    def test_internal_outflow_partha_provenance(self):
+        """Partha entry for INTERNAL model uses 1000 PKR/kg rate."""
+        internal_cycle = ShipmentCycle(
+            proc_model="INTERNAL",
+            customer_id="G",
+            shipment_number=99,
+            cash_date=datetime.date(2026, 1, 1),
+            slaughter_date=datetime.date(2026, 1, 4),
+            slaughter_end_date=datetime.date(2026, 1, 5),
+            send_date=datetime.date(2026, 1, 14),
+            receive_date=datetime.date(2026, 1, 15),
+            pay_days=9,
+            weight_kg_net=5000.0,
+        )
+        config = StrategyConfig(
+            usd_to_pkr=281,
+            partha_rates={"SUPPLIER": 1110, "INTERNAL": 1000},
+        )
+        entries = compute_shipment_cashflow(internal_cycle, config, _load_outflow_config())
+        partha = entries[0]
+        assert partha.model_type == "INTERNAL"
+        assert partha.rule_name == "partha_procurement"
+        assert partha.rate_used == 1000
+        assert partha.inputs_used["partha_rate"] == 1000
+        assert partha.amount_pkr == 5_000_000
+
+    def test_sale_inflow_provenance(self):
+        """SALE inflow has complete provenance with pricing tier and credit info."""
+        entry = compute_sale_entry(_shipment_1(), _full_strategy_config())
+        assert entry.model_type == "SUPPLIER"
+        assert entry.rule_name == "sale_inflow"
+        assert entry.rate_used == 5.70
+        assert entry.timing_basis == "RECEIVE_DATE"
+        assert entry.inputs_used["weight_kg_net"] == 8000.0
+        assert entry.inputs_used["price_usd_per_kg"] == 5.70
+        assert entry.inputs_used["usd_to_pkr"] == 281
+        assert entry.inputs_used["avg_credit_days"] == 17.5
+        assert entry.inputs_used["credit_days_applied"] == 17
+        assert entry.inputs_used["pricing_tier"] == "16-18"
+        assert entry.inputs_used["receive_month"] == "Jan-2026"
+        assert "weight_kg_net" in entry.formula_description
+        assert "price_usd_per_kg" in entry.formula_description
+        assert "usd_to_pkr" in entry.formula_description
+        assert "16-18" in entry.notes
+
+    def test_every_entry_has_provenance(self):
+        """All entries from compute_full_shipment_cashflow have non-empty provenance."""
+        entries = compute_full_shipment_cashflow(
+            _shipment_1(), _full_strategy_config(), _load_outflow_config(),
+        )
+        for e in entries:
+            assert e.model_type, f"{e.cost_type} missing model_type"
+            assert e.rule_name, f"{e.cost_type} missing rule_name"
+            assert e.formula_description, f"{e.cost_type} missing formula_description"
+            assert e.inputs_used, f"{e.cost_type} missing inputs_used"
+            assert e.rate_used is not None, f"{e.cost_type} missing rate_used"
+            assert e.timing_basis, f"{e.cost_type} missing timing_basis"
