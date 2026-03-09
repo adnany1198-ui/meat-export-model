@@ -4,7 +4,7 @@ Queries are explicit dataclasses — no free-form text parsing.
 A future conversational interface would construct these objects from
 user intent and pass them to query_runner.execute().
 
-Query types:
+Query types (analytical):
     RunScenarioQuery           — compute cashflows under a scenario
     CompareScenarioQuery       — baseline vs scenario comparison
     ExplainShipmentQuery       — full cashflow breakdown with provenance
@@ -13,6 +13,13 @@ Query types:
     MostAffectedShipmentsQuery — top N shipments by scenario delta
     WorkingCapitalQuery        — funding profile (single or portfolio)
     FundingComparisonQuery     — baseline vs scenario funding metrics
+
+Query types (workspace lifecycle):
+    SaveScenarioQuery          — save/update a named scenario
+    ListScenariosQuery         — list all saved scenarios
+    DeleteScenarioQuery        — delete a named scenario
+    RenameScenarioQuery        — rename a named scenario
+    CompareNamedScenariosQuery — compare two named scenarios
 
 Result types:
     ScenarioResult             — cashflow entries under a scenario
@@ -23,6 +30,12 @@ Result types:
     MostAffectedResult         — ranked list of affected shipments
     WorkingCapitalResult       — funding profile with timeline
     FundingComparisonResult    — baseline vs scenario funding delta
+
+Named scenario support:
+    Analytical queries accept an optional ``scenario_name`` field.
+    When set, the workspace resolves the name to ScenarioOverrides
+    before dispatching.  ``scenario_name`` takes priority over
+    inline ``overrides``.
 """
 
 from __future__ import annotations
@@ -58,6 +71,12 @@ class QueryType(Enum):
     MOST_AFFECTED = auto()
     WORKING_CAPITAL = auto()
     FUNDING_COMPARISON = auto()
+    # Workspace lifecycle
+    SAVE_SCENARIO = auto()
+    LIST_SCENARIOS = auto()
+    DELETE_SCENARIO = auto()
+    RENAME_SCENARIO = auto()
+    COMPARE_NAMED = auto()
 
 
 # ---------------------------------------------------------------------------
@@ -72,6 +91,7 @@ class RunScenarioQuery:
     query_type: QueryType = field(default=QueryType.RUN_SCENARIO, init=False)
     overrides: ScenarioOverrides = field(default_factory=ScenarioOverrides)
     shipment_id: int | None = None  # None = all shipments
+    scenario_name: str | None = None  # resolved by workspace
 
 
 @dataclass
@@ -81,6 +101,7 @@ class CompareScenarioQuery:
     query_type: QueryType = field(default=QueryType.COMPARE_SCENARIO, init=False)
     overrides: ScenarioOverrides = field(default_factory=ScenarioOverrides)
     shipment_id: int | None = None  # None = all shipments
+    scenario_name: str | None = None
 
 
 @dataclass
@@ -90,6 +111,7 @@ class ExplainShipmentQuery:
     query_type: QueryType = field(default=QueryType.EXPLAIN_SHIPMENT, init=False)
     shipment_id: int = 1
     overrides: ScenarioOverrides | None = None  # None = baseline
+    scenario_name: str | None = None
 
 
 @dataclass
@@ -100,6 +122,7 @@ class ExplainLineItemQuery:
     shipment_id: int = 1
     cost_type: str = ""  # e.g. "Partha", "Freight", "SALE"
     overrides: ScenarioOverrides | None = None
+    scenario_name: str | None = None
 
 
 @dataclass
@@ -109,6 +132,7 @@ class ScenarioSummaryQuery:
     query_type: QueryType = field(default=QueryType.SCENARIO_SUMMARY, init=False)
     overrides: ScenarioOverrides = field(default_factory=ScenarioOverrides)
     top_n: int = 5
+    scenario_name: str | None = None
 
 
 @dataclass
@@ -118,6 +142,7 @@ class MostAffectedShipmentsQuery:
     query_type: QueryType = field(default=QueryType.MOST_AFFECTED, init=False)
     overrides: ScenarioOverrides = field(default_factory=ScenarioOverrides)
     top_n: int = 5
+    scenario_name: str | None = None
 
 
 @dataclass
@@ -127,6 +152,7 @@ class WorkingCapitalQuery:
     query_type: QueryType = field(default=QueryType.WORKING_CAPITAL, init=False)
     shipment_id: int | None = None  # None = portfolio
     overrides: ScenarioOverrides | None = None
+    scenario_name: str | None = None
 
 
 @dataclass
@@ -136,6 +162,61 @@ class FundingComparisonQuery:
     query_type: QueryType = field(default=QueryType.FUNDING_COMPARISON, init=False)
     overrides: ScenarioOverrides = field(default_factory=ScenarioOverrides)
     shipment_id: int | None = None  # None = portfolio
+    scenario_name: str | None = None
+
+
+# ---------------------------------------------------------------------------
+# Workspace lifecycle query dataclasses
+# ---------------------------------------------------------------------------
+
+
+@dataclass
+class SaveScenarioQuery:
+    """Save or update a named scenario."""
+
+    query_type: QueryType = field(default=QueryType.SAVE_SCENARIO, init=False)
+    name: str = ""
+    overrides: ScenarioOverrides = field(default_factory=ScenarioOverrides)
+    description: str = ""
+    notes: str = ""
+
+
+@dataclass
+class ListScenariosQuery:
+    """List all saved scenarios."""
+
+    query_type: QueryType = field(default=QueryType.LIST_SCENARIOS, init=False)
+
+
+@dataclass
+class DeleteScenarioQuery:
+    """Delete a named scenario."""
+
+    query_type: QueryType = field(default=QueryType.DELETE_SCENARIO, init=False)
+    name: str = ""
+
+
+@dataclass
+class RenameScenarioQuery:
+    """Rename a saved scenario."""
+
+    query_type: QueryType = field(default=QueryType.RENAME_SCENARIO, init=False)
+    old_name: str = ""
+    new_name: str = ""
+
+
+@dataclass
+class CompareNamedScenariosQuery:
+    """Compare two named scenarios (or baseline vs named).
+
+    mode: "cashflow" (default) or "funding"
+    """
+
+    query_type: QueryType = field(default=QueryType.COMPARE_NAMED, init=False)
+    scenario_a: str = "baseline"
+    scenario_b: str = ""
+    mode: str = "cashflow"  # "cashflow" or "funding"
+    shipment_id: int | None = None  # for funding mode
 
 
 # ---------------------------------------------------------------------------
