@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAFI Workspace</title>
+<style>
+  :root { --bg:#1a1a2e; --surface:#16213e; --card:#0f3460; --accent:#e94560;
+          --text:#eee; --muted:#aaa; --border:#333; --success:#4ecca3; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg);
+         color:var(--text); display:flex; min-height:100vh; }
+  /* --- sidebar --- */
+  .sidebar { width:220px; background:var(--surface); padding:16px 0;
+             border-right:1px solid var(--border); flex-shrink:0;
+             display:flex; flex-direction:column; position:fixed;
+             top:0; bottom:0; overflow-y:auto; }
+  .sidebar h2 { padding:0 16px 16px; font-size:15px; color:var(--accent);
+                 letter-spacing:1px; text-transform:uppercase; }
+  .sidebar .nav-group { margin-bottom:12px; }
+  .sidebar .nav-group-title { padding:4px 16px; font-size:11px;
+                               color:var(--muted); text-transform:uppercase;
+                               letter-spacing:.5px; }
+  .sidebar button { display:block; width:100%; text-align:left; padding:8px 16px;
+                    background:none; border:none; color:var(--text); cursor:pointer;
+                    font-size:13px; }
+  .sidebar button:hover, .sidebar button.active { background:var(--card);
+                                                   color:var(--accent); }
+  /* --- main area --- */
+  .main { margin-left:220px; flex:1; padding:24px 32px; max-width:1100px; }
+  h1 { font-size:20px; margin-bottom:16px; }
+  .panel { display:none; }
+  .panel.active { display:block; }
+  /* --- forms --- */
+  .form-row { display:flex; gap:12px; align-items:flex-end; flex-wrap:wrap;
+              margin-bottom:12px; }
+  .form-group { display:flex; flex-direction:column; gap:4px; }
+  .form-group label { font-size:12px; color:var(--muted); }
+  .form-group select, .form-group input {
+    padding:6px 10px; border:1px solid var(--border); border-radius:4px;
+    background:var(--surface); color:var(--text); font-size:13px; min-width:160px; }
+  .btn { padding:8px 16px; border:none; border-radius:4px; cursor:pointer;
+         font-size:13px; font-weight:600; }
+  .btn-primary { background:var(--accent); color:#fff; }
+  .btn-primary:hover { opacity:.85; }
+  .btn-sm { padding:4px 10px; font-size:12px; }
+  .btn-success { background:var(--success); color:#000; }
+  .btn-danger { background:#c0392b; color:#fff; }
+  .btn-danger:hover { opacity:.85; }
+  /* --- output --- */
+  .output-box { background:#0d1117; border:1px solid var(--border);
+                border-radius:6px; padding:16px; margin-top:12px;
+                white-space:pre-wrap; font-family:'Cascadia Code','Fira Code',
+                'Consolas',monospace; font-size:12.5px; line-height:1.6;
+                max-height:70vh; overflow-y:auto; }
+  .output-box.error { border-color:var(--accent); color:var(--accent); }
+  .loading { color:var(--muted); font-style:italic; }
+  /* --- home cards --- */
+  .cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+           gap:12px; margin-bottom:20px; }
+  .card { background:var(--card); border-radius:6px; padding:16px; }
+  .card .label { font-size:11px; color:var(--muted); text-transform:uppercase; }
+  .card .value { font-size:22px; font-weight:700; margin-top:4px; }
+  .card .value.positive { color:var(--success); }
+  .card .value.negative { color:var(--accent); }
+  /* --- inline save bar --- */
+  .save-bar { display:flex; gap:8px; align-items:center; margin-top:8px; }
+  .save-bar input { padding:6px 10px; border:1px solid var(--border);
+                    border-radius:4px; background:var(--surface);
+                    color:var(--text); font-size:13px; width:220px; }
+</style>
+</head>
+<body>
+
+<!-- ============ SIDEBAR ============ -->
+<nav class="sidebar">
+  <h2>SAFI Workspace</h2>
+
+  <div class="nav-group">
+    <div class="nav-group-title">Overview</div>
+    <button class="active" onclick="show('home')">Home</button>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">Scenarios</div>
+    <button onclick="show('templates')">Templates</button>
+    <button onclick="show('create-scenario')">Create Scenario</button>
+    <button onclick="show('saved-scenarios')">Saved Scenarios</button>
+    <button onclick="show('compare')">Compare Scenarios</button>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">Analysis</div>
+    <button onclick="show('explain-shipment')">Explain Shipment</button>
+    <button onclick="show('explain-line-item')">Explain Line Item</button>
+    <button onclick="show('working-capital')">Working Capital</button>
+    <button onclick="show('funding')">Funding Comparison</button>
+    <button onclick="show('most-affected')">Most Affected</button>
+    <button onclick="show('scenario-summary')">Scenario Summary</button>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-title">Reports</div>
+    <button onclick="show('reports')">Saved Reports</button>
+  </div>
+</nav>
+
+<!-- ============ MAIN ============ -->
+<div class="main">
+
+<!-- ===== HOME ===== -->
+<div id="panel-home" class="panel active">
+  <h1>Dashboard</h1>
+  <div class="cards">
+    <div class="card">
+      <div class="label">Total Shipments</div>
+      <div class="value">{{ total_shipments }}</div>
+    </div>
+    <div class="card" id="card-cashflow">
+      <div class="label">Baseline Net Cashflow</div>
+      <div class="value loading">…</div>
+    </div>
+    <div class="card" id="card-deficit">
+      <div class="label">Peak Funding Deficit</div>
+      <div class="value loading">…</div>
+    </div>
+    <div class="card" id="card-scenarios">
+      <div class="label">Saved Scenarios</div>
+      <div class="value loading">…</div>
+    </div>
+    <div class="card" id="card-reports">
+      <div class="label">Saved Reports</div>
+      <div class="value loading">…</div>
+    </div>
+  </div>
+  <h1>Baseline Summary</h1>
+  <div id="home-output" class="output-box loading">Loading baseline…</div>
+</div>
+
+<!-- ===== TEMPLATES ===== -->
+<div id="panel-templates" class="panel">
+  <h1>Scenario Templates</h1>
+  <div class="form-row">
+    <button class="btn btn-primary" onclick="loadTemplates()">List Templates</button>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Inspect template</label>
+      <select id="tmpl-inspect-name">
+        <option value="baseline">baseline</option>
+        <option value="total_upside">total_upside</option>
+        <option value="total_downside">total_downside</option>
+        <option value="procurement_cost_stress">procurement_cost_stress</option>
+        <option value="freight_stress">freight_stress</option>
+        <option value="pricing_pressure">pricing_pressure</option>
+        <option value="working_capital_stress">working_capital_stress</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" onclick="inspectTemplate()">Inspect</button>
+  </div>
+  <div id="templates-output" class="output-box" style="display:none"></div>
+</div>
+
+<!-- ===== CREATE SCENARIO ===== -->
+<div id="panel-create-scenario" class="panel">
+  <h1>Create Scenario from Template</h1>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Template</label>
+      <select id="cs-template">
+        <option value="total_upside">total_upside</option>
+        <option value="total_downside">total_downside</option>
+        <option value="procurement_cost_stress">procurement_cost_stress</option>
+        <option value="freight_stress">freight_stress</option>
+        <option value="pricing_pressure">pricing_pressure</option>
+        <option value="working_capital_stress">working_capital_stress</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Scenario Name</label>
+      <input id="cs-name" type="text" placeholder="e.g. my_stress_test">
+    </div>
+    <div class="form-group">
+      <label>Description (optional)</label>
+      <input id="cs-desc" type="text" placeholder="">
+    </div>
+    <button class="btn btn-primary" onclick="createScenario()">Create</button>
+  </div>
+  <div id="create-scenario-output" class="output-box" style="display:none"></div>
+</div>
+
+<!-- ===== SAVED SCENARIOS ===== -->
+<div id="panel-saved-scenarios" class="panel">
+  <h1>Saved Scenarios</h1>
+  <div class="form-row">
+    <button class="btn btn-primary" onclick="loadScenarios()">Refresh</button>
+  </div>
+  <div id="saved-scenarios-output" class="output-box" style="display:none"></div>
+</div>
+
+<!-- ===== COMPARE SCENARIOS ===== -->
+<div id="panel-compare" class="panel">
+  <h1>Compare Scenarios</h1>
+  <p style="color:var(--muted);font-size:13px;margin-bottom:12px;">
+    Compare a named scenario vs baseline, or compare two named scenarios.
+  </p>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Scenario A</label>
+      <input id="cmp-a" type="text" value="baseline" placeholder="baseline">
+    </div>
+    <div class="form-group">
+      <label>Scenario B</label>
+      <input id="cmp-b" type="text" placeholder="e.g. my_stress_test">
+    </div>
+    <div class="form-group">
+      <label>Mode</label>
+      <select id="cmp-mode">
+        <option value="cashflow">cashflow</option>
+        <option value="shipment">shipment</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Shipment (optional)</label>
+      <select id="cmp-sid">
+        <option value="">All</option>
+        {% for sid in shipment_ids %}<option value="{{ sid }}">{{ sid }}</option>{% endfor %}
+      </select>
+    </div>
+    <button class="btn btn-primary" onclick="compareNamed()">Compare</button>
+  </div>
+  <div id="compare-output" class="output-box" style="display:none"></div>
+</div>
+
+<!-- ===== EXPLAIN SHIPMENT ===== -->
+<div id="panel-explain-shipment" class="panel">
+  <h1>Explain Shipment</h1>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Shipment ID</label>
+      <select id="es-sid">
+        {% for sid in shipment_ids %}<option value="{{ sid }}">{{ sid }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Scenario (optional)</label>
+      <input id="es-scenario" type="text" placeholder="leave blank for baseline">
+    </div>
+    <button class="btn btn-primary" onclick="explainShipment()">Explain</button>
+  </div>
+  <div id="explain-shipment-output" class="output-box" style="display:none"></div>
+</div>
+
+<!-- ===== EXPLAIN LINE ITEM ===== -->
+<div id="panel-explain-line-item" class="panel">
+  <h1>Explain Line Item</h1>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Shipment ID</label>
+      <select id="eli-sid">
+        {% for sid in shipment_ids %}<option value="{{ sid }}">{{ sid }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Cost Type</label>
+      <select id="eli-cost">
+        {% for ct in cost_types %}<option value="{{ ct }}">{{ ct }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Scenario (optional)</label>
+      <input id="eli-scenario" type="text" placeholder="leave blank for baseline">
+    </div>
+    <button class="btn btn-primary" onclick="explainLineItem()">Explain</button>
+  </div>
+  <div id="explain-line-item-output" class="output-box" style="display:none"></div>
+</div>
+
+<!-- ===== WORKING CAPITAL ===== -->
+<div id="panel-working-capital" class="panel">
+  <h1>Working Capital Profile</h1>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Shipment (optional)</label>
+      <select id="wc-sid">
+        <option value="">All (portfolio)</option>
+        {% for sid in shipment_ids %}<option value="{{ sid }}">{{ sid }}</option>{% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Scenario (optional)</label>
+      <input id="wc-scenario" type="text" placeholder="leave blank for baseline">
+    </div>
+    <button class="btn btn-primary" onclick="runWorkingCapital()">Run</button>
+  </div>
+  <div id="working-capital-output" class="output-box" style="display:none"></div>
+</div>
+
+<!-- ===== FUNDING COMPARISON ===== -->
+<div id="panel-funding" class="panel">
+  <h1>Funding Comparison</h1>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Scenario (optional)</label>
+      <input id="fc-scenario" type="text" placeholder="leave blank for baseline">
+    </div>
+    <button class="btn btn-primary" onclick="runFunding()">Run</button>
+  </div>
+  <div id="funding-output" class="output-box" style="display:none"></div>
+</div>
+
+<!-- ===== MOST AFFECTED ===== -->
+<div id="panel-most-affected" class="panel">
+  <h1>Most Affected Shipments</h1>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Scenario</label>
+      <input id="ma-scenario" type="text" placeholder="scenario name">
+    </div>
+    <div class="form-group">
+      <label>Top N</label>
+      <select id="ma-topn">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" onclick="runMostAffected()">Run</button>
+  </div>
+  <div id="most-affected-output" class="output-box" style="display:none"></div>
+</div>
+
+<!-- ===== SCENARIO SUMMARY ===== -->
+<div id="panel-scenario-summary" class="panel">
+  <h1>Scenario Summary</h1>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Scenario</label>
+      <input id="ss-scenario" type="text" placeholder="scenario name">
+    </div>
+    <button class="btn btn-primary" onclick="runScenarioSummary()">Run</button>
+  </div>
+  <div id="scenario-summary-output" class="output-box" style="display:none"></div>
+</div>
+
+<!-- ===== REPORTS ===== -->
+<div id="panel-reports" class="panel">
+  <h1>Saved Reports</h1>
+  <div class="form-row">
+    <button class="btn btn-primary" onclick="loadReports()">Refresh</button>
+  </div>
+  <div id="reports-list-output" class="output-box" style="display:none"></div>
+  <h1 style="margin-top:20px;">Retrieve Report</h1>
+  <div class="form-row">
+    <div class="form-group">
+      <label>Report Name</label>
+      <input id="rpt-name" type="text" placeholder="report name">
+    </div>
+    <button class="btn btn-primary" onclick="getReport()">Retrieve</button>
+  </div>
+  <div id="report-detail-output" class="output-box" style="display:none"></div>
+</div>
+
+</div><!-- /.main -->
+
+<!-- ============ JAVASCRIPT ============ -->
+<script>
+// --- Navigation ---
+function show(id) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + id).classList.add('active');
+  document.querySelectorAll('.sidebar button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+
+  // auto-load data for certain panels
+  if (id === 'saved-scenarios') loadScenarios();
+  if (id === 'reports') loadReports();
+}
+
+// --- Generic API helper ---
+function api(url, outputId, opts) {
+  opts = opts || {};
+  const box = document.getElementById(outputId);
+  box.style.display = 'block';
+  box.className = 'output-box loading';
+  box.textContent = 'Loading…';
+
+  const fetchOpts = opts.method === 'POST'
+    ? { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(opts.body) }
+    : {};
+
+  fetch(url, fetchOpts)
+    .then(r => r.json())
+    .then(data => {
+      box.className = data.error ? 'output-box error' : 'output-box';
+      box.textContent = data.error || data.text || '(empty response)';
+
+      // Add save-as-report bar for analysis outputs
+      if (!data.error && opts.saveable) {
+        addSaveBar(box, opts.saveType, opts.saveParams);
+      }
+    })
+    .catch(err => {
+      box.className = 'output-box error';
+      box.textContent = 'Fetch error: ' + err;
+    });
+}
+
+// --- Save bar ---
+function addSaveBar(box, queryType, params) {
+  const bar = document.createElement('div');
+  bar.className = 'save-bar';
+  bar.innerHTML = `<input type="text" placeholder="Report name…" class="save-name">
+    <button class="btn btn-sm btn-success" onclick="saveReport(this, '${queryType}', ${JSON.stringify(JSON.stringify(params))})">Save as Report</button>`;
+  box.after(bar);
+}
+
+function saveReport(btn, queryType, paramsJson) {
+  const nameInput = btn.parentElement.querySelector('.save-name');
+  const reportName = nameInput.value.trim();
+  if (!reportName) { alert('Enter a report name'); return; }
+  const params = JSON.parse(paramsJson);
+  params.query_type = queryType;
+  params.report_name = reportName;
+
+  fetch('/api/report/save', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(params)
+  }).then(r => r.json()).then(data => {
+    if (data.error) alert('Error: ' + data.error);
+    else { btn.textContent = 'Saved!'; btn.disabled = true; }
+  });
+}
+
+// --- Templates ---
+function loadTemplates() { api('/api/templates', 'templates-output'); }
+function inspectTemplate() {
+  const name = document.getElementById('tmpl-inspect-name').value;
+  api('/api/template/inspect?name=' + name, 'templates-output');
+}
+
+// --- Create scenario ---
+function createScenario() {
+  const body = {
+    template_name: document.getElementById('cs-template').value,
+    scenario_name: document.getElementById('cs-name').value.trim(),
+    description: document.getElementById('cs-desc').value.trim(),
+  };
+  if (!body.scenario_name) { alert('Enter a scenario name'); return; }
+  api('/api/template/create', 'create-scenario-output', { method:'POST', body });
+}
+
+// --- Scenarios ---
+function loadScenarios() { api('/api/scenarios', 'saved-scenarios-output'); }
+
+// --- Compare ---
+function compareNamed() {
+  const a = document.getElementById('cmp-a').value.trim() || 'baseline';
+  const b = document.getElementById('cmp-b').value.trim();
+  if (!b) { alert('Enter Scenario B'); return; }
+  const mode = document.getElementById('cmp-mode').value;
+  const sid = document.getElementById('cmp-sid').value;
+  let url = `/api/scenario/compare-named?scenario_a=${a}&scenario_b=${b}&mode=${mode}`;
+  if (sid) url += `&shipment_id=${sid}`;
+  api(url, 'compare-output', {
+    saveable: true, saveType: 'compare_scenario',
+    saveParams: { scenario_name: b }
+  });
+}
+
+// --- Explain shipment ---
+function explainShipment() {
+  const sid = document.getElementById('es-sid').value;
+  const sc = document.getElementById('es-scenario').value.trim();
+  let url = `/api/explain-shipment?shipment_id=${sid}`;
+  if (sc) url += `&scenario_name=${sc}`;
+  api(url, 'explain-shipment-output', {
+    saveable: true, saveType: 'explain_shipment',
+    saveParams: { shipment_id: sid, scenario_name: sc }
+  });
+}
+
+// --- Explain line item ---
+function explainLineItem() {
+  const sid = document.getElementById('eli-sid').value;
+  const cost = document.getElementById('eli-cost').value;
+  const sc = document.getElementById('eli-scenario').value.trim();
+  let url = `/api/explain-line-item?shipment_id=${sid}&cost_type=${cost}`;
+  if (sc) url += `&scenario_name=${sc}`;
+  api(url, 'explain-line-item-output', {
+    saveable: true, saveType: 'explain_line_item',
+    saveParams: { shipment_id: sid, cost_type: cost, scenario_name: sc }
+  });
+}
+
+// --- Working capital ---
+function runWorkingCapital() {
+  const sid = document.getElementById('wc-sid').value;
+  const sc = document.getElementById('wc-scenario').value.trim();
+  let url = '/api/working-capital?';
+  if (sid) url += `shipment_id=${sid}&`;
+  if (sc) url += `scenario_name=${sc}`;
+  api(url, 'working-capital-output', {
+    saveable: true, saveType: 'working_capital',
+    saveParams: { shipment_id: sid, scenario_name: sc }
+  });
+}
+
+// --- Funding ---
+function runFunding() {
+  const sc = document.getElementById('fc-scenario').value.trim();
+  let url = '/api/funding-comparison?';
+  if (sc) url += `scenario_name=${sc}`;
+  api(url, 'funding-output', {
+    saveable: true, saveType: 'funding_comparison',
+    saveParams: { scenario_name: sc }
+  });
+}
+
+// --- Most affected ---
+function runMostAffected() {
+  const sc = document.getElementById('ma-scenario').value.trim();
+  const topn = document.getElementById('ma-topn').value;
+  if (!sc) { alert('Enter a scenario name'); return; }
+  api(`/api/most-affected?scenario_name=${sc}&top_n=${topn}`, 'most-affected-output', {
+    saveable: true, saveType: 'most_affected',
+    saveParams: { scenario_name: sc }
+  });
+}
+
+// --- Scenario summary ---
+function runScenarioSummary() {
+  const sc = document.getElementById('ss-scenario').value.trim();
+  if (!sc) { alert('Enter a scenario name'); return; }
+  api(`/api/scenario-summary?scenario_name=${sc}`, 'scenario-summary-output', {
+    saveable: true, saveType: 'scenario_summary',
+    saveParams: { scenario_name: sc }
+  });
+}
+
+// --- Reports ---
+function loadReports() { api('/api/reports', 'reports-list-output'); }
+function getReport() {
+  const name = document.getElementById('rpt-name').value.trim();
+  if (!name) { alert('Enter a report name'); return; }
+  api('/api/report/get?name=' + encodeURIComponent(name), 'report-detail-output');
+}
+
+// --- Home: load dashboard on page load ---
+window.addEventListener('DOMContentLoaded', () => {
+  // Baseline summary
+  fetch('/api/baseline-summary').then(r=>r.json()).then(data => {
+    const box = document.getElementById('home-output');
+    box.className = data.error ? 'output-box error' : 'output-box';
+    box.textContent = data.error || data.text;
+
+    // Parse numbers from the text
+    if (data.text) {
+      const cashMatch = data.text.match(/Net Cashflow[:\s]*([\-\d,\.]+)/i)
+                     || data.text.match(/Total Net[:\s]*([\-\d,\.]+)/i);
+      const deficitMatch = data.text.match(/Peak Funding[:\s]*([\-\d,\.]+)/i)
+                        || data.text.match(/Max Deficit[:\s]*([\-\d,\.]+)/i)
+                        || data.text.match(/Cumulative Min[:\s]*([\-\d,\.]+)/i);
+
+      setCard('card-cashflow', cashMatch ? cashMatch[1] : '—');
+      setCard('card-deficit', deficitMatch ? deficitMatch[1] : '—');
+    }
+  });
+
+  // Scenario count
+  fetch('/api/scenarios').then(r=>r.json()).then(data => {
+    if (data.text) {
+      const m = data.text.match(/(\d+)\s+saved scenario/i);
+      setCard('card-scenarios', m ? m[1] : countLines(data.text));
+    } else {
+      setCard('card-scenarios', '0');
+    }
+  });
+
+  // Report count
+  fetch('/api/reports').then(r=>r.json()).then(data => {
+    if (data.text) {
+      const m = data.text.match(/(\d+)\s+saved report/i);
+      setCard('card-reports', m ? m[1] : countLines(data.text));
+    } else {
+      setCard('card-reports', '0');
+    }
+  });
+});
+
+function setCard(id, value) {
+  const card = document.getElementById(id);
+  const v = card.querySelector('.value');
+  v.textContent = value;
+  v.classList.remove('loading');
+  if (typeof value === 'string' && value.startsWith('-')) v.classList.add('negative');
+  else v.classList.add('positive');
+}
+
+function countLines(text) {
+  const lines = text.trim().split('\n').filter(l => l.trim().length > 0);
+  return String(Math.max(0, lines.length - 2)); // rough heuristic
+}
+</script>
+</body>
+</html>
