@@ -134,7 +134,11 @@
     </div>
   </div>
   <h1>Baseline Summary</h1>
-  <div id="home-output" class="output-box loading">Loading baseline…</div>
+  {% if baseline_err %}
+  <div id="home-output" class="output-box error">{{ baseline_err }}</div>
+  {% else %}
+  <div id="home-output" class="output-box">{{ baseline_text }}</div>
+  {% endif %}
 </div>
 
 <!-- ===== TEMPLATES ===== -->
@@ -547,46 +551,37 @@ function getReport() {
   api('/api/report/get?name=' + encodeURIComponent(name), 'report-detail-output');
 }
 
-// --- Home: load dashboard on page load ---
+// --- Home: populate dashboard cards from server-rendered data ---
 window.addEventListener('DOMContentLoaded', () => {
-  // Baseline summary
-  fetch('/api/baseline-summary').then(r=>r.json()).then(data => {
-    const box = document.getElementById('home-output');
-    box.className = data.error ? 'output-box error' : 'output-box';
-    box.textContent = data.error || data.text;
+  // Baseline text is already rendered server-side; parse cards from it
+  const baselineText = document.getElementById('home-output').textContent || '';
+  if (baselineText) {
+    const cashMatch = baselineText.match(/Net Cashflow[:\s]*([\-\d,\.]+)/i)
+                   || baselineText.match(/Total Net[:\s]*([\-\d,\.]+)/i);
+    const deficitMatch = baselineText.match(/Peak Funding[:\s]*([\-\d,\.]+)/i)
+                      || baselineText.match(/Max Deficit[:\s]*([\-\d,\.]+)/i)
+                      || baselineText.match(/Cumulative Min[:\s]*([\-\d,\.]+)/i);
+    setCard('card-cashflow', cashMatch ? cashMatch[1] : '—');
+    setCard('card-deficit', deficitMatch ? deficitMatch[1] : '—');
+  }
 
-    // Parse numbers from the text
-    if (data.text) {
-      const cashMatch = data.text.match(/Net Cashflow[:\s]*([\-\d,\.]+)/i)
-                     || data.text.match(/Total Net[:\s]*([\-\d,\.]+)/i);
-      const deficitMatch = data.text.match(/Peak Funding[:\s]*([\-\d,\.]+)/i)
-                        || data.text.match(/Max Deficit[:\s]*([\-\d,\.]+)/i)
-                        || data.text.match(/Cumulative Min[:\s]*([\-\d,\.]+)/i);
+  // Scenario & report counts from server-rendered data
+  const scenariosText = {{ scenarios_text | tojson }};
+  const reportsText = {{ reports_text | tojson }};
 
-      setCard('card-cashflow', cashMatch ? cashMatch[1] : '—');
-      setCard('card-deficit', deficitMatch ? deficitMatch[1] : '—');
-    }
-  });
+  if (scenariosText) {
+    const m = scenariosText.match(/(\d+)\s+saved scenario/i);
+    setCard('card-scenarios', m ? m[1] : countLines(scenariosText));
+  } else {
+    setCard('card-scenarios', '0');
+  }
 
-  // Scenario count
-  fetch('/api/scenarios').then(r=>r.json()).then(data => {
-    if (data.text) {
-      const m = data.text.match(/(\d+)\s+saved scenario/i);
-      setCard('card-scenarios', m ? m[1] : countLines(data.text));
-    } else {
-      setCard('card-scenarios', '0');
-    }
-  });
-
-  // Report count
-  fetch('/api/reports').then(r=>r.json()).then(data => {
-    if (data.text) {
-      const m = data.text.match(/(\d+)\s+saved report/i);
-      setCard('card-reports', m ? m[1] : countLines(data.text));
-    } else {
-      setCard('card-reports', '0');
-    }
-  });
+  if (reportsText) {
+    const m = reportsText.match(/(\d+)\s+saved report/i);
+    setCard('card-reports', m ? m[1] : countLines(reportsText));
+  } else {
+    setCard('card-reports', '0');
+  }
 });
 
 function setCard(id, value) {

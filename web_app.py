@@ -89,12 +89,20 @@ def create_app(workspace: AnalyticalWorkspace | None = None) -> Flask:
 
     @app.route("/")
     def home():
+        # Pre-load baseline data so the page renders without JS fetch
+        baseline_text, baseline_err = _run(RunScenarioQuery())
+        scenarios_text, _ = _run(ListScenariosQuery())
+        reports_text, _ = _run(ListReportsQuery())
         return render_template(
             "index.html",
             page="home",
             total_shipments=total_shipments,
             shipment_ids=shipment_ids,
             cost_types=COST_TYPES,
+            baseline_text=baseline_text or "",
+            baseline_err=baseline_err or "",
+            scenarios_text=scenarios_text or "",
+            reports_text=reports_text or "",
         )
 
     # ------------------------------------------------------------------
